@@ -8,12 +8,9 @@ import {
   MessageCircle,
   Phone,
   Mail,
-  Sun,
-  Moon,
   Sparkles
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { useTheme } from '../context/ThemeContext';
 import { assetUrl } from '../utils/assets';
 
 interface NavbarProps {
@@ -22,7 +19,6 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
   const { totalItems, setIsCartOpen, whatsAppNumber } = useCart();
-  const { isDark, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -155,16 +151,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
                 <Search className="w-5 h-5" />
               </button>
 
-              {/* Theme Toggle (Dark / Light) */}
-              <button
-                onClick={toggleTheme}
-                aria-label={isDark ? 'Switch to Ivory Mahal Mode' : 'Switch to Darbar Night Mode'}
-                title={isDark ? 'Switch to Ivory Mahal Mode' : 'Switch to Darbar Night Mode'}
-                className="p-2 rounded-full hover:bg-white/10 text-[#F9F7F2]/90 hover:text-[#D7AD76] transition-colors"
-              >
-                {isDark ? <Sun className="w-5 h-5 text-[#D7AD76]" /> : <Moon className="w-5 h-5" />}
-              </button>
-
               {/* WhatsApp Concierge Action */}
               <a
                 href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
@@ -231,13 +217,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             </Link>
 
             <div className="flex items-center gap-2">
-              <button
-                onClick={toggleTheme}
-                aria-label="Toggle theme in menu"
-                className="p-2 rounded-full border border-[#C39C69]/30 text-[#D7AD76] hover:bg-white/10"
-              >
-                {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              </button>
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-2 rounded-full border border-[#C39C69]/30 text-[#F9F7F2] hover:text-[#D7AD76] hover:bg-white/10 transition-colors"

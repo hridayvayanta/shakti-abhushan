@@ -115,9 +115,8 @@ export const PrivacyPage: React.FC = () => {
                     We employ modern browser local storage technologies solely to enhance your shopping journey:
                   </p>
                   <ul className="list-disc pl-5 space-y-1 text-xs">
-                    <li><strong className="text-[#061507] dark:text-white">Shopping Bag Persistence:</strong> Preserves items added to your bag during your session so you do not lose your selections when navigating pages.</li>
-                    <li><strong className="text-[#061507] dark:text-white">Darbar Theme Preferences:</strong> Remembers your chosen viewing mode (Ivory Mahal Day Mode vs. Darbar Night Mode).</li>
-                    <li><strong className="text-[#061507] dark:text-white">Cookie Consent State:</strong> Records your privacy choice so we do not repeatedly present consent banners once acknowledged.</li>
+                    <li><strong className="text-[#061507]">Shopping Bag Persistence:</strong> Preserves items added to your bag during your session so you do not lose your selections when navigating pages.</li>
+                    <li><strong className="text-[#061507]">Cookie Consent State:</strong> Records your privacy choice so we do not repeatedly present consent banners once acknowledged.</li>
                   </ul>
                   <p className="text-xs pt-1">
                     You may clear your browser cookies and local storage at any time through your browser settings or via our footer Cookie Preferences tool.

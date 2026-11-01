@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { ToastProvider } from './context/ToastContext';
-import { ThemeProvider } from './context/ThemeContext';
 import { usePageMeta } from './utils/usePageMeta';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -41,18 +40,26 @@ const AppContent: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   usePageMeta();
 
+  useEffect(() => {
+    // Ensure clean light mode permanently
+    try {
+      localStorage.removeItem('sa_theme');
+      document.documentElement.classList.remove('dark');
+    } catch {}
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col bg-[#F9F7F2] dark:bg-[#071909] text-[#263028] dark:text-[#F9F7F2] font-sans selection:bg-[#C39C69] selection:text-white transition-colors duration-300 overflow-x-hidden w-full relative">
+    <div className="min-h-screen flex flex-col bg-[#F9F7F2] text-[#263028] font-sans selection:bg-[#C39C69] selection:text-white overflow-x-hidden w-full relative">
       {/* Cinematic Shared-Element Logo Loading Transition */}
       <CinematicLogoLoader />
 
       {/* Scroll Reading Progress Bar at the top */}
       <ScrollProgressBar />
 
-      {/* Header (Forest Green) with Clickable Logo, Dark Mode & Mobile Menu */}
+      {/* Header (Forest Green) with Clickable Logo & Mobile Menu */}
       <Navbar onOpenSearch={() => setIsSearchOpen(true)} />
 
-      {/* Main Body (Warm Ivory & Pure White alternating, Dark Mode support) */}
+      {/* Main Body (Warm Ivory & Pure White alternating) */}
       <main className="flex-1 w-full overflow-x-hidden">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -90,14 +97,12 @@ const AppContent: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <ToastProvider>
-      <ThemeProvider>
-        <CartProvider>
-          <BrowserRouter basename={import.meta.env.BASE_URL}>
-            <ScrollToTop />
-            <AppContent />
-          </BrowserRouter>
-        </CartProvider>
-      </ThemeProvider>
+      <CartProvider>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <ScrollToTop />
+          <AppContent />
+        </BrowserRouter>
+      </CartProvider>
     </ToastProvider>
   );
 };
