@@ -106,14 +106,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             <Link
               to="/"
               onClick={handleLogoClick}
-              className="flex items-center gap-3.5 group py-1 cursor-pointer"
+              className="flex items-center gap-3.5 group py-1 cursor-pointer shrink-0"
               title="SHAKTI ABHUSHAN — Home"
             >
               <img
                 src={assetUrl('/brand/shakti-abhushan-logo.png')}
                 alt="SHAKTI ABHUSHAN — शक्ति आभूषण"
                 className={`w-auto object-contain transition-all duration-300 filter drop-shadow-md group-hover:scale-105 ${
-                  isScrolled ? 'h-14 sm:h-16 lg:h-20' : 'h-18 sm:h-24 lg:h-28'
+                  isScrolled ? 'h-12 sm:h-16 lg:h-20' : 'h-16 sm:h-24 lg:h-28'
                 }`}
               />
             </Link>
@@ -142,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             </nav>
 
             {/* Right: Search, WhatsApp Concierge, Theme Toggle, Shopping Bag, Mobile Menu */}
-            <div className="flex items-center space-x-3 sm:space-x-4 text-[#F9F7F2]">
+            <div className="flex items-center space-x-1.5 sm:space-x-4 text-[#F9F7F2] shrink-0">
               {/* Search Trigger */}
               <button
                 onClick={onOpenSearch}
