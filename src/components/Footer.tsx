@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
               <img
                 src={assetUrl('/brand/shakti-abhushan-logo.png')}
                 alt="SHAKTI ABHUSHAN"
-                className="h-24 sm:h-28 w-auto object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+                className="h-16 sm:h-20 w-auto object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300"
               />
             </Link>
             <p className="text-sm text-[#F9F7F2]/75 max-w-sm leading-relaxed font-light">
