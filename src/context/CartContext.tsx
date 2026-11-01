@@ -20,7 +20,8 @@ interface CartContextType {
 }
 
 // Configurable business WhatsApp number
-export const DEFAULT_WHATSAPP_NUMBER = '919876543210';
+export const DEFAULT_WHATSAPP_NUMBER =
+  (import.meta.env.VITE_WHATSAPP_NUMBER as string) || '919876543210';
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 

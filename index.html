@@ -2,11 +2,45 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="%BASE_URL%favicon.png" />
-    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <!-- Force HTTPS in Production -->
+    <script>
+      if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        window.location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+      }
+    </script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/x-icon" href="%BASE_URL%favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%apple-touch-icon.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>SHAKTI ABHUSHAN — Luxury Indian Brass Jewellery</title>
-    <meta name="description" content="Discover Shakti Abhushan — Handcrafted luxury Indian brass jewellery. Clean, elegant shopping with authentic video reels and direct WhatsApp orders." />
+    <title>SHAKTI ABHUSHAN — Luxury Handcrafted Indian Brass Jewellery</title>
+    <meta name="description" content="Immerse yourself in Shakti Abhushan — Authentic Indian brass jewellery crafted with royal Jaipur heritage, antique gold micron finishes, and direct WhatsApp concierge orders." />
+    <meta name="keywords" content="Shakti Abhushan, Indian brass jewellery, antique gold jewellery, choker, necklace, jhumka, bangles, Jaipur handcrafted jewellery, wedding jewellery" />
+    <meta name="author" content="Shakti Abhushan Atelier" />
+    <link rel="canonical" href="https://hridayvayanta.github.io/shakti-abhushan/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SHAKTI ABHUSHAN" />
+    <meta property="og:url" content="https://hridayvayanta.github.io/shakti-abhushan/" />
+    <meta property="og:title" content="SHAKTI ABHUSHAN — Luxury Handcrafted Indian Brass Jewellery" />
+    <meta property="og:description" content="Discover timeless Indian brass jewellery handcrafted with antique gold micron finishes. Curated royal chokers, temple bangles, jhumkas, and necklaces." />
+    <meta property="og:image" content="https://hridayvayanta.github.io/shakti-abhushan/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://hridayvayanta.github.io/shakti-abhushan/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SHAKTI ABHUSHAN — Royal Indian Brass Jewellery Atelier" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@shaktiabhushan" />
+    <meta name="twitter:title" content="SHAKTI ABHUSHAN — Luxury Handcrafted Indian Brass Jewellery" />
+    <meta name="twitter:description" content="Discover timeless Indian brass jewellery handcrafted with antique gold micron finishes. Direct orders on WhatsApp." />
+    <meta name="twitter:image" content="https://hridayvayanta.github.io/shakti-abhushan/og-image.jpg" />
     
     <!-- Google Fonts: Cormorant Garamond & Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

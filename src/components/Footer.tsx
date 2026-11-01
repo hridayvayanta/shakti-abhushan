@@ -169,6 +169,15 @@ export const Footer: React.FC = () => {
                   Terms & Conditions
                 </Link>
               </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent('sa-open-cookie-banner'))}
+                  className="hover:text-[#D7AD76] transition-colors text-left"
+                >
+                  Cookie Preferences
+                </button>
+              </li>
             </ul>
           </div>
         </div>

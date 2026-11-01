@@ -16,6 +16,12 @@ export const CookieBanner: React.FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleOpen = () => setIsVisible(true);
+    window.addEventListener('sa-open-cookie-banner', handleOpen);
+    return () => window.removeEventListener('sa-open-cookie-banner', handleOpen);
+  }, []);
+
   const handleAccept = (choice: 'all' | 'essential') => {
     localStorage.setItem('sa_cookie_consent', choice);
     setIsVisible(false);
@@ -39,12 +45,19 @@ export const CookieBanner: React.FC = () => {
             Your Privacy & Shopping Experience
           </h4>
           <p className="text-xs text-[#F9F7F2]/75 leading-relaxed font-light">
-            We use essential cookies to maintain your shopping bag and anonymous analytics to improve our atelier experience.{' '}
+            We use essential cookies and storage to preserve your bag and atelier preferences. Review our{' '}
             <Link
               to="/privacy"
               className="text-[#D7AD76] underline underline-offset-2 hover:text-white transition-colors"
             >
-              Learn more
+              Privacy Policy
+            </Link>{' '}
+            and{' '}
+            <Link
+              to="/terms"
+              className="text-[#D7AD76] underline underline-offset-2 hover:text-white transition-colors"
+            >
+              Terms
             </Link>.
           </p>
         </div>
