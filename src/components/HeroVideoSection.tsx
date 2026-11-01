@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { assetUrl } from '../utils/assets';
+import { hasIntroPlayedInSpaSession } from './CinematicLogoLoader';
 import gsap from 'gsap';
 
 export const HeroVideoSection: React.FC = () => {
@@ -15,7 +16,7 @@ export const HeroVideoSection: React.FC = () => {
       videoRef.current.play().catch(() => {});
     }
 
-    const hasIntroRun = sessionStorage.getItem('sa_intro_completed') === 'true';
+    const hasIntroRun = hasIntroPlayedInSpaSession;
 
     const triggerHeroAnimation = () => {
       gsap.fromTo(
@@ -46,7 +47,7 @@ export const HeroVideoSection: React.FC = () => {
       // Fallback timer if event missed
       const fallbackTimer = setTimeout(() => {
         triggerHeroAnimation();
-      }, 1600);
+      }, 2200);
 
       return () => {
         window.removeEventListener('sa-intro-reveal', handleReveal);

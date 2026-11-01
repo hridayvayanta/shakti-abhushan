@@ -2,20 +2,19 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { assetUrl } from '../utils/assets';
 
+// In-memory flag: ensures the loader plays on fresh page load or browser reload,
+// but does NOT replay on subsequent route changes (e.g. clicking /shop, /product/1, /story, etc.)
+export let hasIntroPlayedInSpaSession = false;
+
 export const CinematicLogoLoader: React.FC = () => {
   const [isVisible, setIsVisible] = useState(() => {
-    // Show only on the first visit of a browsing session
+    // Clean out legacy sessionStorage blocker so user's current tab isn't locked out
     try {
-      const hasSeen = sessionStorage.getItem('sa_intro_completed');
-      if (hasSeen === 'true') return false;
-      // Honor user's reduced-motion preference
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return false;
-      }
-      return true;
-    } catch {
-      return false;
-    }
+      sessionStorage.removeItem('sa_intro_completed');
+    } catch {}
+
+    // Only skip if already played in the current SPA session (e.g. internal route changes)
+    return !hasIntroPlayedInSpaSession;
   });
 
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -28,14 +27,13 @@ export const CinematicLogoLoader: React.FC = () => {
   useEffect(() => {
     if (!isVisible) return;
 
-    // Prevent background scrolling and interaction conflicts during loader
+    // Lock body scrolling during transition
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
     // Locate the permanent header logo
     const targetHeaderLogo = document.getElementById('main-header-logo') as HTMLImageElement | null;
     if (targetHeaderLogo) {
-      // Keep its exact layout dimensions in the header flow, but hide visibility
       targetHeaderLogo.style.visibility = 'hidden';
       targetHeaderLogo.style.opacity = '0';
     }
@@ -58,17 +56,49 @@ export const CinematicLogoLoader: React.FC = () => {
         }
         document.body.style.overflow = previousOverflow || 'unset';
         setIsVisible(false);
-        try {
-          sessionStorage.setItem('sa_intro_completed', 'true');
-        } catch {}
+        hasIntroPlayedInSpaSession = true;
+        window.dispatchEvent(new CustomEvent('sa-intro-reveal'));
         return;
       }
 
-      // Reset any transforms to ensure 100% accurate measurement of natural center
+      // Check if user has reduced-motion enabled
+      const prefersReducedMotion =
+        window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReducedMotion) {
+        // Reduced-motion: Gentle, dignified crossfade without rapid translation
+        const tlReduced = gsap.timeline({
+          onComplete: () => {
+            headerLogo.style.visibility = 'visible';
+            headerLogo.style.opacity = '1';
+            document.body.style.overflow = previousOverflow || 'unset';
+            setIsVisible(false);
+            hasIntroPlayedInSpaSession = true;
+            window.dispatchEvent(new CustomEvent('sa-intro-complete'));
+          },
+        });
+
+        tlReduced
+          .to(logoWrapper, { opacity: 1, duration: 0.5, ease: 'power2.out' })
+          .to({}, { duration: 0.3 })
+          .to(overlay, {
+            opacity: 0,
+            duration: 0.6,
+            ease: 'power2.inOut',
+            onStart: () => {
+              headerLogo.style.visibility = 'visible';
+              headerLogo.style.opacity = '1';
+              window.dispatchEvent(new CustomEvent('sa-intro-reveal'));
+            },
+          });
+        return;
+      }
+
+      // Ensure transforms are cleared for initial measurement
       gsap.set(logoWrapper, { clearProps: 'all' });
       gsap.set(logoImg, { clearProps: 'all' });
 
-      // Measure target header logo and centered loader logo
+      // Measure coordinates dynamically
       const targetRect = headerLogo.getBoundingClientRect();
       const currentRect = logoImg.getBoundingClientRect();
 
@@ -79,39 +109,40 @@ export const CinematicLogoLoader: React.FC = () => {
 
       const deltaX = targetCenterX - currentCenterX;
       const deltaY = targetCenterY - currentCenterY;
-      const targetScale = targetRect.height / currentRect.height;
+      const targetScale =
+        targetRect.height && currentRect.height
+          ? targetRect.height / currentRect.height
+          : 0.45;
 
-      // Set initial state for entrance animation
-      gsap.set(logoWrapper, { opacity: 0, scale: 0.93, y: 12, x: 0 });
+      // Set initial states for entrance
+      gsap.set(logoWrapper, { opacity: 0, scale: 0.90, y: 16, x: 0 });
       gsap.set(glow, { opacity: 0, scale: 0.85 });
       gsap.set(lightLine, { scaleX: 0, opacity: 0 });
 
-      // Single continuous master timeline
+      // Master continuous timeline
       const tl = gsap.timeline({
         onComplete: () => {
-          // Seamless hand-off: Reveal permanent header logo at exact destination
+          // Seamless micro-handoff: Reveal permanent header logo at exact destination
           headerLogo.style.visibility = 'visible';
           headerLogo.style.opacity = '1';
           document.body.style.overflow = previousOverflow || 'unset';
           setIsVisible(false);
-          try {
-            sessionStorage.setItem('sa_intro_completed', 'true');
-          } catch {}
+          hasIntroPlayedInSpaSession = true;
           window.dispatchEvent(new CustomEvent('sa-intro-complete'));
-        }
+        },
       });
 
       if (typeof window !== 'undefined') {
         (window as any).__sa_intro_tl = tl;
       }
 
-      // Phase 1: Entrance (~0.5s)
+      // Phase 1: Entrance (~0.65s)
       tl.to(logoWrapper, {
         opacity: 1,
         scale: 1,
         y: 0,
         x: 0,
-        duration: 0.55,
+        duration: 0.65,
         ease: 'power2.out',
       })
       .to(
@@ -119,31 +150,31 @@ export const CinematicLogoLoader: React.FC = () => {
         {
           opacity: 1,
           scale: 1.15,
-          duration: 0.65,
+          duration: 0.75,
           ease: 'power2.out',
         },
-        '-=0.45'
+        '-=0.55'
       )
       .to(
         lightLine,
         {
           scaleX: 1,
           opacity: 0.85,
-          duration: 0.45,
+          duration: 0.55,
           ease: 'power2.out',
         },
-        '-=0.35'
+        '-=0.45'
       )
-      // Phase 2: Elegant Hold (~0.2s)
-      .to({}, { duration: 0.22 })
-      // Phase 3: Seamless Shared-Element Travel into Header (~0.85s)
+      // Phase 2: Stately Luxury Hold (~0.35s)
+      .to({}, { duration: 0.35 })
+      // Phase 3: Seamless Shared-Element Travel into Header (~0.90s)
       .to(
         logoWrapper,
         {
           x: deltaX,
           y: deltaY,
           scale: targetScale,
-          duration: 0.85,
+          duration: 0.90,
           ease: 'power3.inOut',
           transformOrigin: '50% 50%',
         },
@@ -153,7 +184,7 @@ export const CinematicLogoLoader: React.FC = () => {
         [glow, lightLine],
         {
           opacity: 0,
-          duration: 0.25,
+          duration: 0.30,
           ease: 'power2.in',
         },
         'travel'
@@ -167,39 +198,60 @@ export const CinematicLogoLoader: React.FC = () => {
           ease: 'power2.inOut',
           onStart: () => {
             window.dispatchEvent(new CustomEvent('sa-intro-reveal'));
-          }
+          },
         },
-        'travel+=0.2'
+        'travel+=0.25'
       )
       // Micro-synchronized hand-off at travel completion
-      .set(headerLogo, { visibility: 'visible', opacity: 1 }, 'travel+=0.85')
-      .set(logoWrapper, { opacity: 0 }, 'travel+=0.85');
+      .set(headerLogo, { visibility: 'visible', opacity: 1 }, 'travel+=0.90')
+      .set(logoWrapper, { opacity: 0 }, 'travel+=0.90');
     };
 
-    // Ensure image and DOM are ready before measuring
+    // Ensure images are fully decoded and ready before layout calculations
     const logoImg = logoImgRef.current;
-    if (logoImg && logoImg.complete) {
+    const headerLogo = targetHeaderLogo;
+
+    const prepareAndRun = async () => {
+      try {
+        if (logoImg && !logoImg.complete && logoImg.decode) {
+          await logoImg.decode();
+        }
+        if (headerLogo && !headerLogo.complete && headerLogo.decode) {
+          await headerLogo.decode();
+        }
+      } catch {
+        // Continue even if decode rejected
+      }
       requestAnimationFrame(() => {
-        runTransition();
-      });
-    } else if (logoImg) {
-      logoImg.onload = () => {
         requestAnimationFrame(() => {
           runTransition();
         });
-      };
-      const safetyTimer = setTimeout(() => {
-        runTransition();
-      }, 1500);
-      return () => clearTimeout(safetyTimer);
-    } else {
+      });
+    };
+
+    prepareAndRun();
+
+    // Safety fallback timer if decode/image hangs
+    const safetyTimer = setTimeout(() => {
       runTransition();
-    }
+    }, 2000);
 
     return () => {
+      clearTimeout(safetyTimer);
       document.body.style.overflow = previousOverflow || 'unset';
     };
   }, [isVisible]);
+
+  // Support manual replay for review and testing
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      (window as any).replayShaktiIntro = () => {
+        hasIntroPlayedInSpaSession = false;
+        animationRanRef.current = false;
+        setIsVisible(true);
+      };
+    }
+  }, []);
 
   if (!isVisible) return null;
 
@@ -208,15 +260,15 @@ export const CinematicLogoLoader: React.FC = () => {
       ref={overlayRef}
       role="status"
       aria-label="Loading Shakti Abhushan Atelier"
-      className="fixed inset-0 z-50 bg-[#061507] flex items-center justify-center pointer-events-auto select-none overflow-hidden"
+      className="fixed inset-0 z-[99999] bg-[#061507] flex items-center justify-center pointer-events-auto select-none overflow-hidden"
     >
       {/* Delicate Antique Gold Ambient Glow Bloom */}
       <div
         ref={glowRef}
-        className="absolute w-80 h-80 sm:w-[420px] sm:h-[420px] rounded-full pointer-events-none"
+        className="absolute w-80 h-80 sm:w-[460px] sm:h-[460px] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(195, 156, 105, 0.22) 0%, rgba(215, 173, 118, 0.08) 45%, transparent 70%)',
+            'radial-gradient(circle, rgba(195, 156, 105, 0.28) 0%, rgba(215, 173, 118, 0.10) 45%, transparent 70%)',
         }}
       />
 
@@ -224,6 +276,7 @@ export const CinematicLogoLoader: React.FC = () => {
       <div
         ref={logoWrapperRef}
         className="relative z-10 flex flex-col items-center justify-center will-change-transform"
+        style={{ opacity: 0 }}
       >
         {/* Exact Official Shakti Abhushan Logo (Single Source of Truth) */}
         <img
@@ -236,7 +289,7 @@ export const CinematicLogoLoader: React.FC = () => {
         {/* Delicate Antique Gold Light Line Reveal Accent */}
         <div
           ref={lightLineRef}
-          className="w-24 sm:w-36 h-[1px] bg-gradient-to-r from-transparent via-[#D7AD76] to-transparent mt-5 pointer-events-none origin-center"
+          className="w-28 sm:w-40 h-[1px] bg-gradient-to-r from-transparent via-[#D7AD76] to-transparent mt-5 pointer-events-none origin-center"
         />
       </div>
     </div>
