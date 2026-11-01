@@ -47,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
       {/* 2. Main Header: Deep Forest Green Background */}
       <header
         className={`sticky top-0 z-40 bg-[#061507] text-[#F9F7F2] border-b border-[#C39C69]/25 transition-all duration-300 ${
-          isScrolled ? 'py-2.5 shadow-lg' : 'py-3.5 sm:py-4'
+          isScrolled ? 'py-1.5 sm:py-2 shadow-xl backdrop-blur-md bg-[#061507]/95' : 'py-2 sm:py-3.5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,14 +56,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             {/* Left: Official Shakti Abhushan Logo (Single Source of Truth) */}
             <Link
               to="/"
-              className="flex items-center gap-3 group"
+              className="flex items-center gap-3.5 group py-1"
               title="SHAKTI ABHUSHAN — Home"
             >
               <img
                 src={assetUrl('/brand/shakti-abhushan-logo.png')}
-                alt="SHAKTI ABHUSHAN"
-                className={`w-auto object-contain transition-all duration-300 ${
-                  isScrolled ? 'h-11 sm:h-12' : 'h-12 sm:h-14'
+                alt="SHAKTI ABHUSHAN — शक्ति आभूषण"
+                className={`w-auto object-contain transition-all duration-300 filter drop-shadow-md group-hover:scale-105 ${
+                  isScrolled ? 'h-14 sm:h-16 lg:h-20' : 'h-18 sm:h-24 lg:h-28'
                 }`}
               />
             </Link>
@@ -152,7 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             <img
               src={assetUrl('/brand/shakti-abhushan-logo.png')}
               alt="SHAKTI ABHUSHAN"
-              className="h-12 w-auto object-contain"
+              className="h-20 sm:h-24 w-auto object-contain filter drop-shadow-md"
             />
             <button
               onClick={() => setMobileMenuOpen(false)}
