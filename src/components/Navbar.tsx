@@ -106,10 +106,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             <Link
               to="/"
               onClick={handleLogoClick}
+              id="main-header-logo-container"
               className="flex items-center gap-3.5 group py-1 cursor-pointer shrink-0"
               title="SHAKTI ABHUSHAN — Home"
             >
               <img
+                id="main-header-logo"
                 src={assetUrl('/brand/shakti-abhushan-logo.png')}
                 alt="SHAKTI ABHUSHAN — शक्ति आभूषण"
                 className={`w-auto object-contain transition-all duration-300 filter drop-shadow-md group-hover:scale-105 ${

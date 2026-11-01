@@ -15,23 +15,44 @@ export const HeroVideoSection: React.FC = () => {
       videoRef.current.play().catch(() => {});
     }
 
-    // Text reveal animation on load
-    const ctx = gsap.context(() => {
+    const hasIntroRun = sessionStorage.getItem('sa_intro_completed') === 'true';
+
+    const triggerHeroAnimation = () => {
       gsap.fromTo(
         '.hero-anim-item',
-        { y: 30, opacity: 0 },
+        { y: 35, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          stagger: 0.15,
-          duration: 1.1,
+          stagger: 0.14,
+          duration: 1.0,
           ease: 'power3.out',
-          delay: 0.2
         }
       );
-    }, heroContentRef);
+    };
 
-    return () => ctx.revert();
+    if (hasIntroRun) {
+      // Normal entrance on subsequent route visits
+      const ctx = gsap.context(triggerHeroAnimation, heroContentRef);
+      return () => ctx.revert();
+    } else {
+      // Coordinated with cinematic logo loading transition
+      const handleReveal = () => {
+        triggerHeroAnimation();
+      };
+
+      window.addEventListener('sa-intro-reveal', handleReveal, { once: true });
+
+      // Fallback timer if event missed
+      const fallbackTimer = setTimeout(() => {
+        triggerHeroAnimation();
+      }, 1600);
+
+      return () => {
+        window.removeEventListener('sa-intro-reveal', handleReveal);
+        clearTimeout(fallbackTimer);
+      };
+    }
   }, []);
 
   return (

@@ -12,6 +12,7 @@ import { SearchModal } from './components/SearchModal';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
 import { BackToTopButton } from './components/BackToTopButton';
 import { CookieBanner } from './components/CookieBanner';
+import { CinematicLogoLoader } from './components/CinematicLogoLoader';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -42,6 +43,9 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F9F7F2] dark:bg-[#071909] text-[#263028] dark:text-[#F9F7F2] font-sans selection:bg-[#C39C69] selection:text-white transition-colors duration-300 overflow-x-hidden w-full relative">
+      {/* Cinematic Shared-Element Logo Loading Transition */}
+      <CinematicLogoLoader />
+
       {/* Scroll Reading Progress Bar at the top */}
       <ScrollProgressBar />
 
