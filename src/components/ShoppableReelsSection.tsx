@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { SHOPPABLE_VIDEOS, ShoppableVideo } from '../data/videos';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import { PRODUCTS } from '../data/products';
 import {
   Play,
@@ -17,6 +18,7 @@ import {
 
 export const ShoppableReelsSection: React.FC = () => {
   const { addToCart } = useCart();
+  const { success } = useToast();
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<ShoppableVideo | null>(null);
@@ -56,6 +58,7 @@ export const ShoppableReelsSection: React.FC = () => {
     const product = PRODUCTS.find((p) => p.id === productId);
     if (product) {
       addToCart(product, 1);
+      success('Added to Bag', `${product.name} has been added from the video.`);
     }
   };
 

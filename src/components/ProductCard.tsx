@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Product } from '../types';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import { ShoppingBag, MessageCircle, Eye, ArrowRight } from 'lucide-react';
 
 interface ProductCardProps {
@@ -12,6 +13,7 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0, onQuickView }) => {
   const { addToCart, whatsAppNumber } = useCart();
+  const { success } = useToast();
   const [isHovered, setIsHovered] = useState(false);
   const [added, setAdded] = useState(false);
 
@@ -20,6 +22,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0, on
     e.stopPropagation();
     addToCart(product, 1);
     setAdded(true);
+    success('Added to Bag', `${product.name} has been added to your shopping bag.`);
     setTimeout(() => setAdded(false), 2000);
   };
 

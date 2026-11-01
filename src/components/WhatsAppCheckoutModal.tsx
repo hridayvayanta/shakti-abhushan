@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, MessageCircle, Send, CheckCircle2, ShieldAlert, PhoneCall, Edit3 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import confetti from 'canvas-confetti';
 
 export const WhatsAppCheckoutModal: React.FC = () => {
@@ -14,6 +15,7 @@ export const WhatsAppCheckoutModal: React.FC = () => {
     generateWhatsAppUrl,
     getWhatsAppMessageText
   } = useCart();
+  const { success, error } = useToast();
 
   const [customerName, setCustomerName] = useState('');
   const [customerCity, setCustomerCity] = useState('');
@@ -24,6 +26,10 @@ export const WhatsAppCheckoutModal: React.FC = () => {
   if (!isSummaryModalOpen) return null;
 
   const handleLaunchWhatsApp = () => {
+    if (!customerName.trim()) {
+      error('Customer Name Recommended', 'Adding your name helps our atelier prepare your bespoke parcel.');
+    }
+
     try {
       confetti({
         particleCount: 35,
@@ -33,13 +39,20 @@ export const WhatsAppCheckoutModal: React.FC = () => {
       });
     } catch {}
 
+    success('Connecting to WhatsApp Concierge', 'Redirecting you to our official concierge with prefilled order details.');
+
     const url = generateWhatsAppUrl(customerName, customerCity, customerNote);
     window.open(url, '_blank');
   };
 
   const handleSavePhone = () => {
+    if (!customPhone.trim() || customPhone.length < 10) {
+      error('Invalid WhatsApp Number', 'Please enter a valid phone number with country code (e.g. 919876543210).');
+      return;
+    }
     setWhatsAppNumber(customPhone);
     setEditingNumber(false);
+    success('WhatsApp Number Updated', `Future enquiries will route to +${customPhone}`);
   };
 
   const rawMessage = getWhatsAppMessageText(customerName, customerCity, customerNote);

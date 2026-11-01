@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import { ToastProvider } from './context/ToastContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { usePageMeta } from './utils/usePageMeta';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ShoppingBagDrawer } from './components/ShoppingBagDrawer';
 import { WhatsAppCheckoutModal } from './components/WhatsAppCheckoutModal';
 import { SearchModal } from './components/SearchModal';
+import { ScrollProgressBar } from './components/ScrollProgressBar';
+import { BackToTopButton } from './components/BackToTopButton';
+import { CookieBanner } from './components/CookieBanner';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -18,6 +24,7 @@ import { ShippingPage } from './pages/ShippingPage';
 import { ReturnsPage } from './pages/ReturnsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -29,45 +36,65 @@ const ScrollToTop = () => {
   return null;
 };
 
-export const App: React.FC = () => {
+const AppContent: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  usePageMeta();
 
   return (
-    <CartProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <ScrollToTop />
-        <div className="min-h-screen flex flex-col bg-[#F9F7F2] text-[#263028] font-sans selection:bg-[#C39C69] selection:text-white">
-          
-          {/* Header (Forest Green) */}
-          <Navbar onOpenSearch={() => setIsSearchOpen(true)} />
+    <div className="min-h-screen flex flex-col bg-[#F9F7F2] dark:bg-[#071909] text-[#263028] dark:text-[#F9F7F2] font-sans selection:bg-[#C39C69] selection:text-white transition-colors duration-300 overflow-x-hidden w-full relative">
+      {/* Scroll Reading Progress Bar at the top */}
+      <ScrollProgressBar />
 
-          {/* Main Body (Warm Ivory & Pure White alternating) */}
-          <main className="flex-1">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/shop" element={<ShopPage />} />
-              <Route path="/collections" element={<CollectionsPage />} />
-              <Route path="/product/:id" element={<ProductDetailPage />} />
-              <Route path="/story" element={<StoryPage />} />
-              <Route path="/care" element={<CarePage />} />
-              <Route path="/shipping" element={<ShippingPage />} />
-              <Route path="/returns" element={<ReturnsPage />} />
-              <Route path="/privacy" element={<PrivacyPage />} />
-              <Route path="/terms" element={<TermsPage />} />
-              <Route path="*" element={<HomePage />} />
-            </Routes>
-          </main>
+      {/* Header (Forest Green) with Clickable Logo, Dark Mode & Mobile Menu */}
+      <Navbar onOpenSearch={() => setIsSearchOpen(true)} />
 
-          {/* Global Drawers & Modals */}
-          <ShoppingBagDrawer />
-          <WhatsAppCheckoutModal />
-          <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      {/* Main Body (Warm Ivory & Pure White alternating, Dark Mode support) */}
+      <main className="flex-1 w-full overflow-x-hidden">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/collections" element={<CollectionsPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/story" element={<StoryPage />} />
+          <Route path="/care" element={<CarePage />} />
+          <Route path="/shipping" element={<ShippingPage />} />
+          <Route path="/returns" element={<ReturnsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          {/* Custom Branded 404 Page */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </main>
 
-          {/* Footer (Forest Green) */}
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </CartProvider>
+      {/* Global Drawers & Modals */}
+      <ShoppingBagDrawer />
+      <WhatsAppCheckoutModal />
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+
+      {/* Back to Top Floating Button */}
+      <BackToTopButton />
+
+      {/* Cookie Consent Banner */}
+      <CookieBanner />
+
+      {/* Footer (Forest Green) with Clickable Contacts, Verified Links & Copyright */}
+      <Footer />
+    </div>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <ToastProvider>
+      <ThemeProvider>
+        <CartProvider>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
+            <ScrollToTop />
+            <AppContent />
+          </BrowserRouter>
+        </CartProvider>
+      </ThemeProvider>
+    </ToastProvider>
   );
 };
 

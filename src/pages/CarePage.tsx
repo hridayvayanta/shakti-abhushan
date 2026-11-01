@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Shield, RotateCcw, AlertTriangle, Droplet } from 'lucide-react';
+import { Sparkles, Shield, RotateCcw, AlertTriangle, Droplet, MessageCircle, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const CarePage: React.FC = () => {
@@ -63,11 +63,26 @@ export const CarePage: React.FC = () => {
         <div className="p-8 rounded-2xl bg-white border border-[#061507]/[0.08] shadow-card-soft text-center space-y-4">
           <h4 className="font-serif text-2xl text-[#061507]">Have Questions Regarding Brass Restoration?</h4>
           <p className="text-xs text-[#637066] max-w-md mx-auto font-light">
-            Our atelier provides guidance on polishing cloths and maintenance directly through WhatsApp.
+            Our atelier provides guidance on polishing cloths, re-plating, and maintenance directly through WhatsApp and phone.
           </p>
-          <Link to="/shop" className="btn-primary inline-block px-7 py-3 rounded-full text-xs uppercase tracking-widest font-semibold">
-            Explore Handcrafted Pieces
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <a
+              href="https://wa.me/919876543210?text=Hello%20Shakti%20Abhushan!%20I%20have%20a%20question%20about%20caring%20for%20my%20jewellery."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold"
+            >
+              <MessageCircle className="w-4 h-4 text-[#25D366]" />
+              <span>Ask on WhatsApp</span>
+            </a>
+            <a
+              href="tel:+919876543210"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#061507]/20 text-[#061507] hover:bg-black/5 text-xs uppercase tracking-widest font-semibold transition-all"
+            >
+              <Phone className="w-4 h-4 text-[#C39C69]" />
+              <span>Call +91 98765 43210</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

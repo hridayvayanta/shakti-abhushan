@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Trash2, Plus, Minus, MessageCircle, ArrowRight, ShoppingBag, ShieldCheck } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import { Link } from 'react-router-dom';
 
 export const ShoppingBagDrawer: React.FC = () => {
@@ -14,6 +15,7 @@ export const ShoppingBagDrawer: React.FC = () => {
     totalItems,
     setIsSummaryModalOpen
   } = useCart();
+  const { info } = useToast();
 
   if (!isCartOpen) return null;
 
@@ -139,7 +141,10 @@ export const ShoppingBagDrawer: React.FC = () => {
 
                     {/* Delete button */}
                     <button
-                      onClick={() => removeFromCart(item.product.id)}
+                      onClick={() => {
+                        removeFromCart(item.product.id);
+                        info('Item Removed', `${item.product.name} removed from your bag.`);
+                      }}
                       className="p-1.5 text-[#637066] hover:text-red-500 transition-colors"
                       title="Remove item"
                     >

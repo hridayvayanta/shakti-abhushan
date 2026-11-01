@@ -4,6 +4,7 @@ import { PRODUCTS } from '../data/products';
 import { SHOPPABLE_VIDEOS } from '../data/videos';
 import { ProductCard } from '../components/ProductCard';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import { assetUrl } from '../utils/assets';
 import {
   ShoppingBag,
@@ -23,6 +24,7 @@ import confetti from 'canvas-confetti';
 export const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { addToCart, whatsAppNumber } = useCart();
+  const { success } = useToast();
 
   const product = PRODUCTS.find((p) => p.id === id);
 
@@ -56,6 +58,7 @@ export const ProductDetailPage: React.FC = () => {
   const handleAddToCart = () => {
     addToCart(product, quantity, selectedVariant);
     setAddedNotice(true);
+    success('Added to Bag', `${product.name} (Qty: ${quantity}) has been added to your bag.`);
     setTimeout(() => setAddedNotice(false), 2500);
 
     try {
