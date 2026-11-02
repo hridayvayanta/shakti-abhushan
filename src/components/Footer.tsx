@@ -149,23 +149,23 @@ export const Footer: React.FC = () => {
           </div>
           <div className="flex items-center gap-4 flex-wrap justify-center">
             <a
-              href="https://instagram.com/caventra"
+              href="https://instagram.com/caventra__"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 hover:text-[#D7AD76] transition-colors"
-              title="Caventra on Instagram"
+              title="Caventra on Instagram (@caventra__)"
             >
               <Instagram className="w-3.5 h-3.5 text-[#C39C69]" />
-              <span>@caventra</span>
+              <span>@caventra__</span>
             </a>
             <span className="text-[#C39C69]/30">•</span>
             <a
-              href="mailto:contact@caventra.com"
+              href="mailto:caventraofficial@gmail.com"
               className="inline-flex items-center gap-1.5 hover:text-[#D7AD76] transition-colors"
-              title="Email Caventra"
+              title="Email Caventra (caventraofficial@gmail.com)"
             >
               <Mail className="w-3.5 h-3.5 text-[#C39C69]" />
-              <span>contact@caventra.com</span>
+              <span>caventraofficial@gmail.com</span>
             </a>
           </div>
         </div>
