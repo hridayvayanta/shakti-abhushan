@@ -10,10 +10,10 @@ export const ReturnsPage: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C39C69] font-medium block">
-            Client Assurance • वापसी एवं विनिमय
+            Returns & Exchanges
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#061507] tracking-tight">
-            Returns & Exchanges
+            Returns & Exchanges Policy
           </h1>
           <p className="text-sm text-[#637066] font-light leading-relaxed">
             Our 7-day inspection and exchange policy ensures you shop with absolute peace of mind.
@@ -28,7 +28,7 @@ export const ReturnsPage: React.FC = () => {
           </div>
 
           <div className="lg:col-span-8 space-y-6 text-sm leading-relaxed font-light">
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-3">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] space-y-3">
               <h3 className="font-serif text-xl text-[#061507] font-medium flex items-center gap-2">
                 <RotateCcw className="w-5 h-5 text-[#C39C69]" />
                 <span>7-Day Hassle-Free Exchange Window</span>
@@ -38,7 +38,7 @@ export const ReturnsPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-3">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] space-y-3">
               <h3 className="font-serif text-xl text-[#061507] font-medium flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-[#25D366]" />
                 <span>Eligibility Criteria for Returns</span>
@@ -50,7 +50,7 @@ export const ReturnsPage: React.FC = () => {
               </ul>
             </div>
 
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-3">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] space-y-3">
               <h3 className="font-serif text-xl text-[#061507] font-medium flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-[#C39C69]" />
                 <span>Damaged or Defective Deliveries</span>

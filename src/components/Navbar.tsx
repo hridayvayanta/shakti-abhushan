@@ -6,8 +6,6 @@ import {
   Menu,
   X,
   MessageCircle,
-  Phone,
-  Mail,
   Sparkles
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -68,24 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
         <span>Complimentary Insured Shipping Across India</span>
         <span className="text-[#C39C69]/40 hidden md:inline">•</span>
         <span className="hidden md:inline text-[#F9F7F2]/90">
-          Concierge Hotline:{' '}
-          <a
-            href="tel:0000000000"
-            className="text-[#D7AD76] hover:text-white underline underline-offset-2 transition-colors ml-1"
-            title="Call Shakti Abhushan Concierge"
-          >
-            0000000000
-          </a>
-        </span>
-        <span className="text-[#C39C69]/40 hidden lg:inline">•</span>
-        <span className="hidden lg:inline text-[#F9F7F2]/90">
-          <a
-            href="mailto:test@shaktiabhushan.com?subject=Shakti%20Abhushan%20Inquiry"
-            className="text-[#D7AD76] hover:text-white transition-colors"
-            title="Email Atelier Concierge"
-          >
-            test@shaktiabhushan.com
-          </a>
+          Handcrafted Solid Brass Jewellery
         </span>
       </div>
 
@@ -109,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
               <img
                 id="main-header-logo"
                 src={assetUrl('/brand/shakti-abhushan-logo.png')}
-                alt="SHAKTI ABHUSHAN — शक्ति आभूषण"
+                alt="Shakti Abhushan"
                 className={`w-auto object-contain transition-all duration-300 filter drop-shadow-md group-hover:scale-105 ${
                   isScrolled ? 'h-12 sm:h-16 lg:h-20' : 'h-16 sm:h-24 lg:h-28'
                 }`}
@@ -289,28 +270,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
               <span>Direct WhatsApp Concierge</span>
             </a>
 
-            {/* Clickable Phone & Email Links */}
-            <div className="grid grid-cols-2 gap-2 text-center text-xs pt-1">
-              <a
-                href="tel:0000000000"
-                className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-white/5 text-[#F9F7F2]/80 hover:text-[#D7AD76] transition-colors"
-                title="Call 0000000000"
-              >
-                <Phone className="w-3.5 h-3.5 text-[#C39C69]" />
-                <span>Call: 0000000000</span>
-              </a>
-
-              <a
-                href="mailto:test@shaktiabhushan.com?subject=Shakti%20Abhushan%20Enquiry"
-                className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-white/5 text-[#F9F7F2]/80 hover:text-[#D7AD76] transition-colors"
-                title="Email test@shaktiabhushan.com"
-              >
-                <Mail className="w-3.5 h-3.5 text-[#C39C69]" />
-                <span>Email Us</span>
-              </a>
-            </div>
-
-            <p className="text-center text-[10px] text-[#F9F7F2]/50 uppercase tracking-widest pt-1">
+            {/* Information Footer */}
+            <p className="text-center text-[11px] text-[#F9F7F2]/60 uppercase tracking-widest pt-2">
               Tradition, Worn Beautifully • Handcrafted Indian Brass
             </p>
           </div>

@@ -7,7 +7,6 @@ const RAW_PRODUCTS: Product[] = [
   {
     id: 'rajputana-hansli-choker',
     name: 'Rajputana Hansli Choker',
-    hindiName: 'राजपूताना हंसली कंठहार',
     tagline: 'Hand-forged rigid brass collar torque with antique gold micron plating',
     price: 3850,
     originalPrice: 4500,
@@ -37,7 +36,6 @@ const RAW_PRODUCTS: Product[] = [
   {
     id: 'chandrika-bell-jhumkas',
     name: 'Chandrika Bell Jhumkas',
-    hindiName: 'चन्द्रिका कर्णफूल झुमके',
     tagline: 'Cascading brass jhumkas with handcrafted floral domes and micro ghunghroos',
     price: 1950,
     originalPrice: 2400,
@@ -67,7 +65,6 @@ const RAW_PRODUCTS: Product[] = [
   {
     id: 'gajraj-royal-cuff-kada',
     name: 'Gajraj Royal Cuff Kada',
-    hindiName: 'गजराज राजसी कड़ा',
     tagline: 'Solid brass hinged cuff with twin elephant finials and floral repoussé',
     price: 2450,
     originalPrice: 2950,
@@ -96,7 +93,6 @@ const RAW_PRODUCTS: Product[] = [
   {
     id: 'kamal-patra-cocktail-ring',
     name: 'Kamal Patra Statement Ring',
-    hindiName: 'कमल पत्र मुद्रिका',
     tagline: 'Multi-layered blooming lotus ring with etched brass petals and adjustable band',
     price: 1450,
     originalPrice: 1750,
@@ -125,7 +121,6 @@ const RAW_PRODUCTS: Product[] = [
   {
     id: 'rajasi-temple-bridal-set',
     name: 'Rajasi Temple Bridal Set',
-    hindiName: 'राजसी मंदिर विवाह संग्रह',
     tagline: 'Complete bridal set featuring temple choker, matching jhumkas, and maang tikka',
     price: 6850,
     originalPrice: 7990,
@@ -158,7 +153,6 @@ const RAW_COLLECTIONS: CollectionMeta[] = [
   {
     id: 'necklaces',
     name: 'Necklaces & Chokers',
-    hindiTitle: 'कंठहार एवं हंसली',
     subtitle: 'Chokers, collar torques, and multi-strand haars',
     description: 'Chokers, collar torques, and layered haars hand-forged in solid brass with adjustable cords.',
     image: '/products/choker-gold.jpg',
@@ -167,7 +161,6 @@ const RAW_COLLECTIONS: CollectionMeta[] = [
   {
     id: 'earrings',
     name: 'Earrings & Jhumkas',
-    hindiTitle: 'कर्णफूल एवं झुमके',
     subtitle: 'Temple bells, floral studs, and crescent drops',
     description: 'Jhumkas, chandbalis, and studs balanced to wear comfortably, fitted with brass ghunghroos and secure posts.',
     image: '/products/earring-vintage.jpg',
@@ -176,7 +169,6 @@ const RAW_COLLECTIONS: CollectionMeta[] = [
   {
     id: 'bangles',
     name: 'Bangles & Kadas',
-    hindiTitle: 'कंगन एवं गजराज कड़ा',
     subtitle: 'Solid cuffs, elephant finials, and pierced bangles',
     description: 'Solid brass cuffs and hinged bangles with screw locks and hand-carved floral repoussé.',
     image: '/products/bangle-antique.jpg',
@@ -185,7 +177,6 @@ const RAW_COLLECTIONS: CollectionMeta[] = [
   {
     id: 'rings',
     name: 'Rings & Accessories',
-    hindiTitle: 'मुद्रिका एवं आभूषण',
     subtitle: 'Lotus cocktail rings and chased pendants',
     description: 'Cocktail rings and talismans hand-cut from sheet brass with adjustable double shanks.',
     image: '/products/ring-statement.jpg',
@@ -194,7 +185,6 @@ const RAW_COLLECTIONS: CollectionMeta[] = [
   {
     id: 'sets',
     name: 'Bridal & Jewellery Sets',
-    hindiTitle: 'राजसी विवाह संग्रह',
     subtitle: 'Full bridal and ceremonial ensembles',
     description: 'Matching chokers, jhumkas, and maang tikkas finished in uniform antique gold patina for weddings and celebrations.',
     image: '/products/necklace-hasli.jpg',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Compass, Shield, Feather } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { assetUrl } from '../utils/assets';
 
 export const StoryPage: React.FC = () => {
@@ -9,11 +9,10 @@ export const StoryPage: React.FC = () => {
       <div className="max-w-5xl mx-auto space-y-20">
         
         {/* Header */}
-        <div className="text-center space-y-5 max-w-3xl mx-auto pt-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium text-[#061507] border border-[#061507]/15 bg-white shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#C39C69]" />
-            <span>The Atelier Heritage • हमारी परम्परा</span>
-          </div>
+        <div className="text-center space-y-4 max-w-3xl mx-auto pt-6">
+          <span className="text-xs uppercase tracking-[0.3em] text-[#C39C69] font-medium block">
+            Our Story
+          </span>
 
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#061507] tracking-tight leading-tight">
             Handcrafted Indian Brass: <br />
@@ -26,7 +25,7 @@ export const StoryPage: React.FC = () => {
         </div>
 
         {/* Hero Editorial Photography */}
-        <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden border border-[#061507]/[0.08] shadow-card-soft">
+        <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden border border-[#061507]/[0.08]">
           <img
             src={assetUrl('/products/model-heritage.jpg')}
             alt="Shakti Abhushan Handcrafted Brass Jewellery"
@@ -40,7 +39,7 @@ export const StoryPage: React.FC = () => {
         </div>
 
         {/* Chapter 1: The Material */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#061507]/[0.08] shadow-card-soft">
+        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#061507]/[0.08]">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-5">
               <span className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-medium block mb-2">
@@ -52,7 +51,7 @@ export const StoryPage: React.FC = () => {
             </div>
             <div className="md:col-span-7 space-y-4 text-sm text-[#637066] font-light leading-relaxed">
               <p>
-                Brass (पीतल - Peetal) has served Indian metalcraft for centuries in ceremonial vessels, temple bells, and royal adornments. It holds fine chisel marks cleanly, resists brittle fracture, and offers the substantial hand-feel of precious metal.
+                Brass has served Indian metalcraft for centuries in ceremonial vessels, temple bells, and royal adornments. It holds fine chisel marks cleanly, resists brittle fracture, and offers the substantial hand-feel of precious metal.
               </p>
               <p>
                 We cast and forge using a lead-free, nickel-free brass alloy. Each piece receives an electroplated antique gold micron finish followed by a protective clear seal, preventing skin discoloration and protecting the deep crevices from tarnishing.
@@ -63,14 +62,14 @@ export const StoryPage: React.FC = () => {
 
         {/* Visual Pair */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="rounded-2xl overflow-hidden border border-[#061507]/[0.08] aspect-[4/3] bg-[#F4F1EA] shadow-card-soft">
+          <div className="rounded-2xl overflow-hidden border border-[#061507]/[0.08] aspect-[4/3] bg-[#F4F1EA]">
             <img
               src={assetUrl('/products/choker-gold-detail.jpg')}
               alt="Repoussé Chisel Detail on Brass"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-[#061507]/[0.08] aspect-[4/3] bg-[#F4F1EA] shadow-card-soft">
+          <div className="rounded-2xl overflow-hidden border border-[#061507]/[0.08] aspect-[4/3] bg-[#F4F1EA]">
             <img
               src={assetUrl('/products/model-portrait.jpg')}
               alt="Portrait of Shakti Abhushan Jewellery"
@@ -80,7 +79,7 @@ export const StoryPage: React.FC = () => {
         </div>
 
         {/* Chapter 2: The Craft */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#061507]/[0.08] shadow-card-soft">
+        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#061507]/[0.08]">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-5">
               <span className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-medium block mb-2">
@@ -102,17 +101,17 @@ export const StoryPage: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="p-10 rounded-3xl bg-[#061507] text-[#F9F7F2] border border-[#C39C69]/30 text-center space-y-6">
-          <h3 className="font-serif text-3xl sm:text-4xl text-white">
-            Browse the Atelier Catalogue
+        <div className="p-10 rounded-3xl bg-white text-[#061507] border border-[#061507]/[0.08] text-center space-y-6">
+          <h3 className="font-serif text-3xl sm:text-4xl text-[#061507]">
+            Explore All Creations
           </h3>
-          <p className="text-xs text-[#F9F7F2]/75 max-w-md mx-auto">
-            Explore our current collection of chokers, jhumkas, kadas, and statement rings with direct ordering on WhatsApp.
+          <p className="text-xs text-[#637066] max-w-md mx-auto">
+            Explore our collection of chokers, jhumkas, kadas, and statement rings with direct ordering on WhatsApp.
           </p>
           <div className="flex justify-center gap-4">
             <Link
               to="/shop"
-              className="btn-primary px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-semibold flex items-center gap-2 bg-white text-[#061507] hover:bg-[#F9F7F2]"
+              className="btn-primary px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-semibold flex items-center gap-2 bg-[#061507] text-[#D7AD76] hover:bg-[#0A1B0D] hover:text-white"
             >
               <span>View All Pieces</span>
               <ArrowRight className="w-3.5 h-3.5" />

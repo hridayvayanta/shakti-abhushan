@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Shield, RotateCcw, AlertTriangle, Droplet, MessageCircle, Phone } from 'lucide-react';
+import { Shield, RotateCcw, AlertTriangle, Droplet } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const CarePage: React.FC = () => {
@@ -8,7 +8,7 @@ export const CarePage: React.FC = () => {
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4 pt-6">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C39C69] font-medium block">
-            Atelier Preservation Guide
+            Jewellery Care Guide
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl text-[#061507]">
             Caring for Antique Brass Jewellery
@@ -19,7 +19,7 @@ export const CarePage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] space-y-3">
             <div className="w-10 h-10 rounded-lg bg-[#F9F7F2] flex items-center justify-center text-[#061507]">
               <Droplet className="w-5 h-5 text-[#C39C69]" />
             </div>
@@ -29,7 +29,7 @@ export const CarePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] space-y-3">
             <div className="w-10 h-10 rounded-lg bg-[#F9F7F2] flex items-center justify-center text-[#061507]">
               <Shield className="w-5 h-5 text-[#C39C69]" />
             </div>
@@ -39,7 +39,7 @@ export const CarePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] space-y-3">
             <div className="w-10 h-10 rounded-lg bg-[#F9F7F2] flex items-center justify-center text-[#061507]">
               <RotateCcw className="w-5 h-5 text-[#C39C69]" />
             </div>
@@ -49,7 +49,7 @@ export const CarePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] space-y-3">
             <div className="w-10 h-10 rounded-lg bg-[#F9F7F2] flex items-center justify-center text-[#061507]">
               <AlertTriangle className="w-5 h-5 text-[#C39C69]" />
             </div>
@@ -60,28 +60,18 @@ export const CarePage: React.FC = () => {
           </div>
         </div>
 
-        <div className="p-8 rounded-2xl bg-white border border-[#061507]/[0.08] shadow-card-soft text-center space-y-4">
+        <div className="p-8 rounded-2xl bg-white border border-[#061507]/[0.08] text-center space-y-4">
           <h4 className="font-serif text-2xl text-[#061507]">Have Questions Regarding Brass Restoration?</h4>
-          <p className="text-xs text-[#637066] max-w-md mx-auto font-light">
-            Our atelier provides guidance on polishing cloths, re-plating, and maintenance directly through WhatsApp and phone.
+          <p className="text-xs text-[#637066] max-w-md mx-auto font-light leading-relaxed">
+            Our team provides personalized guidance on polishing cloths, re-plating, and maintenance for your brass jewellery pieces.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <a
-              href="https://wa.me/0000000000?text=Hello%20Shakti%20Abhushan!%20I%20have%20a%20question%20about%20caring%20for%20my%20jewellery."
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="pt-2">
+            <Link
+              to="/shop"
               className="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold"
             >
-              <MessageCircle className="w-4 h-4 text-[#25D366]" />
-              <span>Ask on WhatsApp</span>
-            </a>
-            <a
-              href="tel:0000000000"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#061507]/20 text-[#061507] hover:bg-black/5 text-xs uppercase tracking-widest font-semibold transition-all"
-            >
-              <Phone className="w-4 h-4 text-[#C39C69]" />
-              <span>Call 0000000000</span>
-            </a>
+              <span>Explore Collections</span>
+            </Link>
           </div>
         </div>
       </div>

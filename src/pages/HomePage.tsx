@@ -7,12 +7,10 @@ import { EditorialShowcaseSection } from '../components/EditorialShowcaseSection
 import { FaqSection } from '../components/FaqSection';
 import { ProductCard } from '../components/ProductCard';
 import { PRODUCTS } from '../data/products';
-import { ArrowRight, Sparkles, ShieldCheck, Truck, RotateCcw, MessageCircle } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { ArrowRight } from 'lucide-react';
 import { assetUrl } from '../utils/assets';
 
 export const HomePage: React.FC = () => {
-  const { whatsAppNumber } = useCart();
 
   // Bestselling pieces (Section 06)
   const bestsellers = PRODUCTS.filter(
@@ -39,7 +37,7 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-12 sm:mb-16">
             <div className="space-y-2">
               <span className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-medium block">
-                Popular Creations • लोकप्रिय आभूषण
+                Featured Jewellery
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#061507]">
                 Our Most Loved Pieces
@@ -49,7 +47,7 @@ export const HomePage: React.FC = () => {
               to="/shop"
               className="text-xs uppercase tracking-widest text-[#061507] hover:text-[#C39C69] font-semibold flex items-center gap-1.5 border-b border-[#061507]/30 pb-0.5 transition-colors"
             >
-              <span>Explore Atelier Catalogue</span>
+              <span>View All Products</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -62,27 +60,13 @@ export const HomePage: React.FC = () => {
               ))}
             </div>
           ) : (
-            <div className="py-14 px-6 text-center space-y-4 max-w-xl mx-auto rounded-3xl bg-[#F9F7F2] border border-[#061507]/[0.08] shadow-card-soft">
-              <Sparkles className="w-8 h-8 text-[#C39C69] mx-auto" />
+            <div className="py-14 px-6 text-center space-y-4 max-w-xl mx-auto rounded-3xl bg-[#F9F7F2] border border-[#061507]/[0.08]">
               <h3 className="font-serif text-2xl sm:text-3xl text-[#061507]">
-                Atelier Catalogue in Preparation
+                Collection in Preparation
               </h3>
               <p className="text-xs sm:text-sm text-[#637066] font-light leading-relaxed max-w-md mx-auto">
-                Our signature bridal chokers, temple jhumkas, and royal cuffs are currently being catalogued with verified pricing. For immediate availability, custom bridal inquiries, or bespoke orders, speak directly with our concierge.
+                Our signature bridal chokers, temple jhumkas, and cuffs are currently being catalogued with verified pricing. For custom bridal inquiries or orders, connect directly with our team.
               </p>
-              <div className="pt-2">
-                <a
-                  href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
-                    'Hello Shakti Abhushan! I am interested in viewing your handcrafted brass jewellery collection.'
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary py-3 px-8 rounded-full text-xs font-semibold tracking-wider inline-flex items-center gap-2"
-                >
-                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
-                  <span>Inquire via WhatsApp</span>
-                </a>
-              </div>
             </div>
           )}
         </div>
@@ -101,7 +85,7 @@ export const HomePage: React.FC = () => {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-12 sm:mb-16">
               <div className="space-y-2">
                 <span className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-medium block">
-                  Latest Additions • नवीन आभूषण
+                  Latest Additions
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#061507]">
                   Freshly Curated for You
@@ -144,7 +128,7 @@ export const HomePage: React.FC = () => {
             {/* Right Brand Narrative */}
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-medium block">
-                The Maison Heritage • हमारी परम्परा
+                Our Story
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#061507] leading-tight">
                 Rooted in Beauty. <br />
@@ -152,7 +136,7 @@ export const HomePage: React.FC = () => {
               </h2>
               <div className="space-y-4 text-sm sm:text-base text-[#637066] font-light leading-relaxed">
                 <p>
-                  SHAKTI ABHUSHAN works with hereditary brass metalsmiths across Rajasthan and Gujarat. We create jewellery with the weight, detail, and patina of antique royal ornaments, made in lead-free solid brass for longevity.
+                  SHAKTI ABHUSHAN works with hereditary brass metalsmiths across Rajasthan and Gujarat. We create jewellery with the weight, detail, and patina of traditional Indian ornaments, made in lead-free solid brass for longevity.
                 </p>
                 <p>
                   Each piece is shaped through traditional repoussé chiseling and finished with an antique gold micron electroplate that protects the metal without the harsh glare of modern plating.
@@ -173,44 +157,29 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 8. CLIENT SERVICE PILLARS (Warm Ivory) */}
+      {/* 8. CLIENT SERVICE PILLARS (Clean Editorial Layout) */}
       <section className="py-16 bg-[#F9F7F2] border-b border-[#061507]/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center sm:text-left">
-            <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-[#061507]/[0.06] shadow-sm">
-              <div className="p-3 rounded-full bg-[#F9F7F2] text-[#061507] flex-shrink-0">
-                <Truck className="w-5 h-5 text-[#C39C69]" />
-              </div>
-              <div>
-                <h4 className="font-serif text-lg text-[#061507] font-medium">Pan-India Insured Dispatch</h4>
-                <p className="text-xs text-[#637066] mt-1 font-light leading-relaxed">
-                  Complimentary domestic delivery across India. Dispatched within 24–48 hours in cushioned packaging.
-                </p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#061507]/10">
+            <div className="py-6 md:py-0 md:px-8 first:pl-0 space-y-2">
+              <h4 className="font-serif text-xl text-[#061507] font-medium">Pan-India Insured Dispatch</h4>
+              <p className="text-xs text-[#637066] font-light leading-relaxed">
+                Complimentary insured domestic delivery across all Indian pin codes, carefully encased in protective casing.
+              </p>
             </div>
 
-            <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-[#061507]/[0.06] shadow-sm">
-              <div className="p-3 rounded-full bg-[#F9F7F2] text-[#061507] flex-shrink-0">
-                <ShieldCheck className="w-5 h-5 text-[#C39C69]" />
-              </div>
-              <div>
-                <h4 className="font-serif text-lg text-[#061507] font-medium">Solid Brass Construction</h4>
-                <p className="text-xs text-[#637066] mt-1 font-light leading-relaxed">
-                  High-grade lead-free brass core with antique micron gold electroplate and anti-tarnish sealant.
-                </p>
-              </div>
+            <div className="py-6 md:py-0 md:px-8 space-y-2">
+              <h4 className="font-serif text-xl text-[#061507] font-medium">Solid Brass Construction</h4>
+              <p className="text-xs text-[#637066] font-light leading-relaxed">
+                Lead-free, hypoallergenic solid brass core with antique micron gold electroplate and protective anti-tarnish seal.
+              </p>
             </div>
 
-            <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-[#061507]/[0.06] shadow-sm">
-              <div className="p-3 rounded-full bg-[#F9F7F2] text-[#061507] flex-shrink-0">
-                <MessageCircle className="w-5 h-5 text-[#25D366]" />
-              </div>
-              <div>
-                <h4 className="font-serif text-lg text-[#061507] font-medium">WhatsApp Atelier Concierge</h4>
-                <p className="text-xs text-[#637066] mt-1 font-light leading-relaxed">
-                  Direct personal consultation for stock confirmation, custom bridal sets, and parcel tracking.
-                </p>
-              </div>
+            <div className="py-6 md:py-0 md:px-8 last:pr-0 space-y-2">
+              <h4 className="font-serif text-xl text-[#061507] font-medium">Contact on WhatsApp</h4>
+              <p className="text-xs text-[#637066] font-light leading-relaxed">
+                Direct personal consultation for custom bridal sizing, order confirmations, and bespoke styling advice.
+              </p>
             </div>
           </div>
         </div>

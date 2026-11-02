@@ -11,13 +11,13 @@ export const CollectionsPage: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 pt-6">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C39C69] font-medium block">
-            Category Directory • संग्रह
+            Shop by Category
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#061507] tracking-tight">
-            Curated Collections
+            Our Collections
           </h1>
           <p className="text-sm text-[#637066] font-light leading-relaxed">
-            Explore our brass jewelry by category: collar chokers, temple jhumkas, carved cuffs, cocktail rings, and complete bridal ensembles.
+            Explore our brass jewellery by category: collar chokers, temple jhumkas, carved cuffs, cocktail rings, and bridal sets.
           </p>
         </div>
 
@@ -30,15 +30,14 @@ export const CollectionsPage: React.FC = () => {
             return (
               <div
                 key={col.id}
-                className="p-8 sm:p-12 rounded-3xl bg-white border border-[#061507]/[0.08] shadow-card-soft"
+                className="p-8 sm:p-12 rounded-3xl bg-white border border-[#061507]/[0.08]"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                   
                   {/* Left Info */}
                   <div className={`lg:col-span-5 space-y-5 ${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
-                    <span className="text-xs font-mono uppercase tracking-widest text-[#C39C69] flex items-center gap-2">
-                      <Sparkles className="w-3.5 h-3.5" />
-                      {col.hindiTitle}
+                    <span className="text-xs font-mono uppercase tracking-widest text-[#C39C69] block">
+                      Category 0{index + 1}
                     </span>
                     
                     <h2 className="font-serif text-3xl sm:text-4xl text-[#061507]">
@@ -100,7 +99,7 @@ export const CollectionsPage: React.FC = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
                           <div className="relative z-10 space-y-1 text-white">
                             <span className="text-[10px] uppercase font-mono tracking-wider text-[#D7AD76] block">
-                              Showcase Piece • आभूषण
+                              Featured Piece
                             </span>
                             <span className="font-serif text-base font-medium block">{categoryProducts[0].name}</span>
                             <span className="text-xs text-[#D7AD76] font-mono font-semibold block">
@@ -108,7 +107,7 @@ export const CollectionsPage: React.FC = () => {
                             </span>
                           </div>
                         </Link>
-                        <div className="relative aspect-[4/3] sm:aspect-auto min-h-[220px] rounded-2xl overflow-hidden bg-[#F4F1EA] border border-[#061507]/[0.08] shadow-sm flex flex-col justify-end p-5">
+                        <div className="relative aspect-[4/3] sm:aspect-auto min-h-[220px] rounded-2xl overflow-hidden bg-[#F4F1EA] border border-[#061507]/[0.08] flex flex-col justify-end p-5">
                           <img
                             src={col.image}
                             alt={col.name}
@@ -117,7 +116,7 @@ export const CollectionsPage: React.FC = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                           <div className="relative z-10 space-y-2 text-white">
                             <span className="text-[10px] uppercase font-mono tracking-wider text-[#D7AD76] block">
-                              Atelier Heritage
+                              Overview
                             </span>
                             <p className="text-xs text-white/90 font-light leading-relaxed">
                               {col.subtitle}
@@ -133,7 +132,7 @@ export const CollectionsPage: React.FC = () => {
                         </div>
                       </div>
                     ) : (
-                      <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-[#F4F1EA] border border-[#061507]/[0.08] shadow-card-soft">
+                      <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-[#F4F1EA] border border-[#061507]/[0.08]">
                         <img
                           src={col.image}
                           alt={col.name}
@@ -141,7 +140,7 @@ export const CollectionsPage: React.FC = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
                           <span className="text-xs uppercase tracking-widest text-[#D7AD76] font-mono">
-                            Heirloom Craftsmanship • शुद्ध पीतल निर्माण
+                            Handcrafted Solid Brass
                           </span>
                         </div>
                       </div>

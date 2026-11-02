@@ -282,7 +282,7 @@ export const CinematicLogoLoader: React.FC = () => {
         <img
           ref={logoImgRef}
           src={assetUrl('/brand/shakti-abhushan-logo.png')}
-          alt="SHAKTI ABHUSHAN — शक्ति आभूषण"
+          alt="Shakti Abhushan"
           className="h-32 sm:h-44 md:h-52 w-auto object-contain filter drop-shadow-[0_12px_36px_rgba(0,0,0,0.85)] pointer-events-none"
         />
 

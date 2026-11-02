@@ -11,7 +11,7 @@ export const TermsPage: React.FC = () => {
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C39C69] font-medium block">
-            Maison Agreements • नियम एवं शर्तें
+            Terms of Service
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#061507] tracking-tight">
             Terms & Conditions
@@ -35,7 +35,7 @@ export const TermsPage: React.FC = () => {
           {/* Main Legal Content (8 columns on lg) */}
           <div className="lg:col-span-8 space-y-6">
             
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-6">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] space-y-6">
               
               {/* Highlight Pillars */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-6 border-b border-[#061507]/[0.08]">
@@ -152,11 +152,7 @@ export const TermsPage: React.FC = () => {
                   <ul className="list-disc pl-5 space-y-1 text-xs">
                     <li>Do not accept parcels that show signs of severe external tampering, tearing, or unsealed tape.</li>
                     <li>We recommend clients record a continuous unboxing video when opening the parcel to swiftly assist in any rare shipping transit claim.</li>
-                    <li>Any transit discrepancy must be reported within 48 hours of delivery to{' '}
-                      <a href="mailto:test@shaktiabhushan.com" className="text-[#C39C69] underline font-medium">
-                        test@shaktiabhushan.com
-                      </a>.
-                    </li>
+                    <li>Any transit discrepancy must be reported within 48 hours of delivery to our customer support team.</li>
                   </ul>
                 </div>
               </section>

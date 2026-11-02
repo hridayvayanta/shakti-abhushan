@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, Instagram, Mail, Phone, ArrowUpRight } from 'lucide-react';
-import { useCart } from '../context/CartContext';
 import { assetUrl } from '../utils/assets';
 
 export const Footer: React.FC = () => {
-  const { whatsAppNumber } = useCart();
 
   const handleLogoClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -33,44 +30,8 @@ export const Footer: React.FC = () => {
               />
             </Link>
             <p className="text-sm text-[#F9F7F2]/75 max-w-sm leading-relaxed font-light">
-              SHAKTI ABHUSHAN specializes in handcrafted Indian brass jewellery. Hand-forged repoussé, antique gold micron finishes, and direct ordering via WhatsApp concierge.
+              SHAKTI ABHUSHAN creates handcrafted Indian brass jewellery, bringing the weight, detail, and patina of classic ornaments to modern celebrations.
             </p>
-
-            {/* Direct Contact Points: Clickable WhatsApp, Phone, Instagram, Email */}
-            <div className="flex items-center gap-3.5 pt-2">
-              <a
-                href={`https://wa.me/${whatsAppNumber}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-[#C39C69]/40 bg-[#0A1B0D] flex items-center justify-center text-[#25D366] hover:border-[#D7AD76] hover:scale-105 transition-all"
-                title="WhatsApp Concierge"
-              >
-                <MessageCircle className="w-5 h-5" />
-              </a>
-              <a
-                href="tel:0000000000"
-                className="w-10 h-10 rounded-full border border-[#C39C69]/40 bg-[#0A1B0D] flex items-center justify-center text-[#D7AD76] hover:border-[#D7AD76] hover:scale-105 transition-all"
-                title="Call 0000000000"
-              >
-                <Phone className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:test@shaktiabhushan.com?subject=Shakti%20Abhushan%20Jewellery%20Inquiry"
-                className="w-10 h-10 rounded-full border border-[#C39C69]/40 bg-[#0A1B0D] flex items-center justify-center text-[#D7AD76] hover:border-[#D7AD76] hover:scale-105 transition-all"
-                title="Email test@shaktiabhushan.com"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-[#C39C69]/40 bg-[#0A1B0D] flex items-center justify-center text-[#E1306C] hover:border-[#D7AD76] hover:scale-105 transition-all"
-                title="Follow on Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Shop Collections Links */}
@@ -107,38 +68,26 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* The Maison Heritage */}
+          {/* About Us */}
           <div>
             <h4 className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-semibold mb-5">
-              The Maison
+              About Us
             </h4>
             <ul className="space-y-3 text-sm text-[#F9F7F2]/75">
               <li>
                 <Link to="/story" className="hover:text-[#D7AD76] transition-colors">
-                  Our Story & Heritage
+                  Our Story
                 </Link>
               </li>
               <li>
                 <Link to="/care" className="hover:text-[#D7AD76] transition-colors">
-                  Brass Care Guide
+                  Jewellery Care Guide
                 </Link>
               </li>
               <li>
                 <Link to="/collections" className="hover:text-[#D7AD76] transition-colors">
-                  Curated Collections
+                  Collections
                 </Link>
-              </li>
-              <li>
-                <a
-                  href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
-                    'Hello Shakti Abhushan! I would like to enquire about bespoke bridal orders and bridal consultations.'
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#D7AD76] transition-colors inline-flex items-center gap-1"
-                >
-                  Custom Orders <ArrowUpRight className="w-3.5 h-3.5" />
-                </a>
               </li>
             </ul>
           </div>
@@ -186,21 +135,9 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-[#F9F7F2]/60 gap-4 text-center md:text-left">
           <p>© {new Date().getFullYear()} SHAKTI ABHUSHAN. All rights reserved. Handcrafted Indian Brass Jewellery.</p>
           <div className="flex items-center gap-6 flex-wrap justify-center">
-            <a
-              href={`https://wa.me/${whatsAppNumber}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[#D7AD76] hover:underline"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#25D366]" />
-              Official WhatsApp Commerce
-            </a>
+            <span>Complimentary Insured Shipping Across India</span>
             <span className="hidden sm:inline">•</span>
-            <span>Insured Pan-India Transit</span>
-            <span className="hidden sm:inline">•</span>
-            <a href="tel:0000000000" className="hover:text-[#D7AD76] transition-colors">
-              0000000000
-            </a>
+            <span>Handcrafted in India</span>
           </div>
         </div>
       </div>

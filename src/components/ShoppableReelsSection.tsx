@@ -69,7 +69,7 @@ export const ShoppableReelsSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2.5">
           <span className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-medium block">
-            Jewellery in Motion • दृश्य संग्रह
+            Jewellery in Motion
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#061507]">
             See It. Love It. Wear It.

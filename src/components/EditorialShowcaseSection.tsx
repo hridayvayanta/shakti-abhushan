@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { assetUrl } from '../utils/assets';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -84,7 +84,7 @@ export const EditorialShowcaseSection: React.FC = () => {
     >
       <div
         ref={frameRef}
-        className="relative mx-auto h-[480px] sm:h-[580px] lg:h-[680px] overflow-hidden shadow-2xl transition-all"
+        className="relative mx-auto h-[480px] sm:h-[580px] lg:h-[680px] overflow-hidden border border-[#061507]/[0.08] transition-all"
         style={{ width: '92%' }}
       >
         {/* Lifestyle Background Photo */}
@@ -104,16 +104,16 @@ export const EditorialShowcaseSection: React.FC = () => {
           className="absolute inset-0 p-8 sm:p-14 lg:p-20 flex flex-col justify-end max-w-4xl"
         >
           <div className="space-y-4 text-white">
-            <span className="text-xs uppercase tracking-[0.3em] text-[#D7AD76] font-mono block">
-              Editorial Campaign • आभूषण कला
+            <span className="text-xs uppercase tracking-[0.25em] text-[#D7AD76] font-medium block">
+              Artisanal Craftsmanship
             </span>
 
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
               Beauty in Every Detail.
             </h2>
 
-            <p className="text-sm sm:text-base text-white/80 max-w-xl font-light leading-relaxed">
-              Every brass piece is hammered and finished by hand, retaining the warmth, weight, and presence of authentic Indian royal adornment.
+            <p className="text-sm sm:text-base text-white/85 max-w-xl font-light leading-relaxed">
+              Every brass piece is shaped and finished by hand, retaining the warmth, weight, and presence of classic Indian jewellery.
             </p>
 
             <div className="pt-2">
@@ -121,7 +121,7 @@ export const EditorialShowcaseSection: React.FC = () => {
                 to="/shop"
                 className="btn-primary inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-xs tracking-widest uppercase font-semibold border border-[#C39C69]"
               >
-                <span>View Complete Collection</span>
+                <span>View All Products</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>

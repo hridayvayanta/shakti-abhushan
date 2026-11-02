@@ -7,8 +7,6 @@ import {
   RotateCcw,
   Sparkles,
   MessageCircle,
-  Phone,
-  Mail,
   Lock
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -33,7 +31,7 @@ export const LegalSidebar: React.FC<LegalSidebarProps> = () => {
   return (
     <aside className="space-y-6">
       {/* 1. Policy Navigation Directory */}
-      <div className="bg-white p-5 sm:p-6 rounded-3xl border border-[#061507]/[0.08] shadow-card-soft">
+      <div className="bg-white p-5 sm:p-6 rounded-3xl border border-[#061507]/[0.08]">
         <h3 className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-semibold mb-4 flex items-center gap-2">
           <FileText className="w-3.5 h-3.5 text-[#D7AD76]" />
           <span>Legal & Atelier Policies</span>
@@ -49,7 +47,7 @@ export const LegalSidebar: React.FC<LegalSidebarProps> = () => {
                 to={item.path}
                 className={`flex items-start gap-3 p-3 rounded-2xl transition-all duration-200 ${
                   isActive
-                    ? 'bg-[#061507] text-[#F9F7F2] shadow-sm'
+                    ? 'bg-[#061507] text-[#F9F7F2]'
                     : 'text-[#263028] hover:bg-[#F9F7F2]'
                 }`}
               >
@@ -84,49 +82,33 @@ export const LegalSidebar: React.FC<LegalSidebarProps> = () => {
         </nav>
       </div>
 
-      {/* 2. Concierge Legal & Order Desk */}
-      <div className="bg-[#061507] text-[#F9F7F2] p-6 rounded-3xl border border-[#C39C69]/30 shadow-xl space-y-4">
-        <div className="flex items-center gap-2 text-[#D7AD76] text-xs uppercase tracking-widest font-semibold">
-          <Lock className="w-3.5 h-3.5 text-[#25D366]" />
-          <span>Atelier Concierge Desk</span>
+      {/* 2. Customer Support Desk */}
+      <div className="bg-[#F0EBE1] text-[#061507] p-6 rounded-3xl border border-[#061507]/[0.08] space-y-4">
+        <div className="flex items-center gap-2 text-[#061507] text-xs uppercase tracking-widest font-semibold">
+          <Lock className="w-3.5 h-3.5 text-[#C39C69]" />
+          <span>Customer Support Desk</span>
         </div>
-        <p className="text-xs text-[#F9F7F2]/75 leading-relaxed font-light">
-          Have questions regarding order verification, custom brass sizing, or privacy? Speak directly with our concierge.
+        <p className="text-xs text-[#637066] leading-relaxed font-light">
+          Have questions regarding order verification, custom brass sizing, or privacy? Connect directly with our team on WhatsApp.
         </p>
 
-        <div className="space-y-2.5 pt-2 border-t border-[#C39C69]/20 text-xs">
+        <div className="pt-2 border-t border-[#061507]/10 text-xs">
           <a
             href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
               'Hello Shakti Abhushan! I have a question regarding your store policies.'
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-full bg-[#C39C69] text-[#061507] hover:bg-[#D7AD76] font-semibold text-xs transition-all shadow-sm"
+            className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-full bg-[#061507] text-[#D7AD76] hover:bg-[#0A1B0D] hover:text-white font-semibold text-xs transition-all shadow-sm"
           >
-            <MessageCircle className="w-4 h-4 text-[#061507]" />
+            <MessageCircle className="w-4 h-4 text-[#25D366]" />
             <span>Chat on WhatsApp</span>
-          </a>
-
-          <a
-            href="tel:0000000000"
-            className="flex items-center gap-2.5 p-2 rounded-xl text-[#F9F7F2]/80 hover:text-white hover:bg-white/5 transition-colors"
-          >
-            <Phone className="w-3.5 h-3.5 text-[#D7AD76]" />
-            <span>0000000000</span>
-          </a>
-
-          <a
-            href="mailto:test@shaktiabhushan.com?subject=Policy%20Inquiry%20-%20Shakti%20Abhushan"
-            className="flex items-center gap-2.5 p-2 rounded-xl text-[#F9F7F2]/80 hover:text-white hover:bg-white/5 transition-colors"
-          >
-            <Mail className="w-3.5 h-3.5 text-[#D7AD76]" />
-            <span>test@shaktiabhushan.com</span>
           </a>
         </div>
       </div>
 
       {/* 3. Statutory Compliance Card */}
-      <div className="p-4 rounded-2xl bg-[#F0EBE1] border border-[#061507]/[0.06] text-[11px] text-[#637066] leading-relaxed space-y-1.5">
+      <div className="p-4 rounded-2xl bg-white border border-[#061507]/[0.06] text-[11px] text-[#637066] leading-relaxed space-y-1.5">
         <div className="font-semibold text-[#061507] flex items-center gap-1.5">
           <ShieldCheck className="w-3.5 h-3.5 text-[#C39C69]" />
           <span>Statutory Compliance</span>

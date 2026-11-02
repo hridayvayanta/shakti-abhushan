@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { assetUrl } from '../utils/assets';
 import { hasIntroPlayedInSpaSession } from './CinematicLogoLoader';
 import gsap from 'gsap';
@@ -83,10 +83,9 @@ export const HeroVideoSection: React.FC = () => {
         <div className="max-w-2xl space-y-6 text-white">
           
           {/* Eyebrow */}
-          <div className="hero-anim-item inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium text-[#D7AD76] border border-[#C39C69]/40 bg-[#061507]/60 backdrop-blur-md">
-            <Sparkles className="w-3 h-3 text-[#D7AD76]" />
-            <span>Handcrafted Indian Brass • शाही आभूषण</span>
-          </div>
+          <span className="hero-anim-item text-xs uppercase tracking-[0.3em] text-[#D7AD76] font-medium block">
+            Handcrafted Indian Brass
+          </span>
 
           {/* Headline */}
           <h1 className="hero-anim-item font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-normal leading-[1.08] tracking-tight">

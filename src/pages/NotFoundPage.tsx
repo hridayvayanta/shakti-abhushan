@@ -8,21 +8,18 @@ export const NotFoundPage: React.FC = () => {
 
   return (
     <div className="min-h-[75vh] flex items-center justify-center bg-[#F9F7F2] text-[#263028] px-4 py-16 sm:py-24">
-      <div className="max-w-xl w-full text-center space-y-8 bg-white p-8 sm:p-12 rounded-3xl border border-[#061507]/[0.08] shadow-xl">
+      <div className="max-w-xl w-full text-center space-y-8 bg-white p-8 sm:p-12 rounded-3xl border border-[#061507]/[0.08]">
         
         {/* Emblem indicator */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.25em] font-medium text-[#C39C69] bg-[#C39C69]/10 border border-[#C39C69]/25">
           <Compass className="w-3.5 h-3.5" />
-          <span>Atelier Directory • ४०४</span>
+          <span>Page Not Found • 404</span>
         </div>
 
         <div className="space-y-3">
           <h1 className="font-serif text-5xl sm:text-6xl text-[#061507] tracking-tight">
             This Piece Has Moved
           </h1>
-          <p className="font-serif italic text-xl text-[#C39C69] font-light">
-            राजसी आभूषण अप्राप्य
-          </p>
           <p className="text-sm sm:text-base text-[#637066] max-w-md mx-auto leading-relaxed font-light pt-2">
             The jewellery showcase or page you are seeking may have been repositioned or retired from the current collection.
           </p>

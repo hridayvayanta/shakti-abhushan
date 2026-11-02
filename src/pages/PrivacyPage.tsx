@@ -23,7 +23,7 @@ export const PrivacyPage: React.FC = () => {
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C39C69] font-medium block">
-            Maison Governance • गोपनीयता नीति एवं डिजिटल डेटा सुरक्षा
+            Privacy & Data Governance
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#061507] tracking-tight">
             Privacy Policy & DPDP Governance
@@ -50,7 +50,7 @@ export const PrivacyPage: React.FC = () => {
           <div className="lg:col-span-8 space-y-6">
             
             {/* Core Privacy Highlights Box */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-6">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] space-y-6">
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-6 border-b border-[#061507]/[0.08]">
                 <div className="space-y-1">
@@ -91,7 +91,7 @@ export const PrivacyPage: React.FC = () => {
                   <span>Statutory Notice under Section 5 of DPDP Act, 2023</span>
                 </div>
                 <p className="text-xs text-[#263028] leading-relaxed font-light">
-                  <strong>Shakti Abhushan</strong> acts as the <em>Data Fiduciary</em> (डेटा न्यासी) determining the purpose and means of processing your personal data. By browsing our digital showroom or interacting with our WhatsApp Concierge, you are acknowledged as the <em>Data Principal</em> (डेटा स्वामी). This notice precedes any collection of personal data, detailing our processing purposes, rights of correction and erasure, and institutional escalation avenues including the Data Protection Board of India.
+                  <strong>Shakti Abhushan</strong> acts as the <em>Data Fiduciary</em> determining the purpose and means of processing your personal data. By browsing our digital showroom or interacting with our WhatsApp Concierge, you are acknowledged as the <em>Data Principal</em>. This notice precedes any collection of personal data, detailing our processing purposes, rights of correction and erasure, and institutional escalation avenues including the Data Protection Board of India.
                 </p>
               </section>
 
@@ -99,7 +99,7 @@ export const PrivacyPage: React.FC = () => {
               <section className="space-y-2.5">
                 <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">01.</span>
-                  <span>Personal Data Collected & Specified Purposes (धारा 5 एवं 6)</span>
+                  <span>Personal Data Collected & Specified Purposes (Sections 5 & 6)</span>
                 </h2>
                 <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
@@ -139,7 +139,7 @@ export const PrivacyPage: React.FC = () => {
               <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06]">
                 <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">03.</span>
-                  <span>Cookies & Client-Side Local Storage (सहमति प्रबंधन)</span>
+                  <span>Cookies & Client-Side Local Storage (Consent Management)</span>
                 </h2>
                 <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
@@ -177,7 +177,7 @@ export const PrivacyPage: React.FC = () => {
               <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06]">
                 <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">05.</span>
-                  <span>Your Statutory Rights under DPDP Act, 2023 (डेटा स्वामी के अधिकार)</span>
+                  <span>Your Statutory Rights under DPDP Act, 2023 (Statutory Rights)</span>
                 </h2>
                 <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
@@ -187,7 +187,7 @@ export const PrivacyPage: React.FC = () => {
                     <div className="p-3.5 rounded-2xl bg-[#F9F7F2] border border-[#061507]/[0.06] space-y-1">
                       <div className="text-xs font-semibold text-[#061507] flex items-center gap-1.5">
                         <FileCheck2 className="w-3.5 h-3.5 text-[#C39C69]" />
-                        <span>Right to Access & Summary (धारा 11)</span>
+                        <span>Right to Access & Summary (Section 11)</span>
                       </div>
                       <p className="text-[11px] text-[#637066] font-light leading-relaxed">
                         Request a summary of your personal data processed by us and the list of processors with whom data has been shared.
@@ -197,7 +197,7 @@ export const PrivacyPage: React.FC = () => {
                     <div className="p-3.5 rounded-2xl bg-[#F9F7F2] border border-[#061507]/[0.06] space-y-1">
                       <div className="text-xs font-semibold text-[#061507] flex items-center gap-1.5">
                         <UserCheck className="w-3.5 h-3.5 text-[#C39C69]" />
-                        <span>Right to Correction & Updating (धारा 12)</span>
+                        <span>Right to Correction & Updating (Section 12)</span>
                       </div>
                       <p className="text-[11px] text-[#637066] font-light leading-relaxed">
                         Correct inaccurate, incomplete, or outdated personal contact or delivery records.
@@ -207,7 +207,7 @@ export const PrivacyPage: React.FC = () => {
                     <div className="p-3.5 rounded-2xl bg-[#F9F7F2] border border-[#061507]/[0.06] space-y-1">
                       <div className="text-xs font-semibold text-[#061507] flex items-center gap-1.5">
                         <Database className="w-3.5 h-3.5 text-[#C39C69]" />
-                        <span>Right to Erasure (विस्मरण/हटाने का अधिकार)</span>
+                        <span>Right to Erasure (Right to be Forgotten)</span>
                       </div>
                       <p className="text-[11px] text-[#637066] font-light leading-relaxed">
                         Request erasure of your contact details once order fulfillment, warranty, and statutory tax audit obligations conclude.
@@ -217,7 +217,7 @@ export const PrivacyPage: React.FC = () => {
                     <div className="p-3.5 rounded-2xl bg-[#F9F7F2] border border-[#061507]/[0.06] space-y-1">
                       <div className="text-xs font-semibold text-[#061507] flex items-center gap-1.5">
                         <Users className="w-3.5 h-3.5 text-[#C39C69]" />
-                        <span>Right to Nominate (नामांकन का अधिकार - धारा 14)</span>
+                        <span>Right to Nominate (Section 14)</span>
                       </div>
                       <p className="text-[11px] text-[#637066] font-light leading-relaxed">
                         Nominate a legal representative to exercise your data rights in the unfortunate event of death or incapacity.
@@ -231,7 +231,7 @@ export const PrivacyPage: React.FC = () => {
               <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06]">
                 <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">06.</span>
-                  <span>Protection of Children's Personal Data (धारा 9)</span>
+                  <span>Protection of Children's Personal Data (Section 9)</span>
                 </h2>
                 <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
@@ -248,7 +248,7 @@ export const PrivacyPage: React.FC = () => {
               <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06]">
                 <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">07.</span>
-                  <span>Security Safeguards & Data Retention (धारा 8(5) एवं 8(7))</span>
+                  <span>Security Safeguards & Data Retention (Sections 8(5) & 8(7))</span>
                 </h2>
                 <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
@@ -266,26 +266,22 @@ export const PrivacyPage: React.FC = () => {
               <section className="space-y-3 pt-4 border-t border-[#061507]/[0.06]">
                 <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">08.</span>
-                  <span>Grievance Redressal & Data Protection Board Escalation (धारा 13)</span>
+                  <span>Grievance Redressal & Data Protection Board Escalation (Section 13)</span>
                 </h2>
                 <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
                     In accordance with Section 8(9) and Section 13 of the DPDP Act, 2023, Shakti Abhushan has instituted a dedicated Grievance Redressal Desk. If you have any inquiries, wish to exercise statutory data rights, or have a grievance:
                   </p>
 
-                  <div className="p-4 rounded-2xl bg-[#061507] text-[#F9F7F2] space-y-2 text-xs">
-                    <div className="font-semibold text-[#D7AD76] uppercase tracking-wider text-xs">
-                      Designated Data Grievance Officer (डेटा शिकायत निवारण अधिकारी)
+                  <div className="p-4 rounded-2xl bg-[#F0EBE1] text-[#061507] border border-[#061507]/[0.08] space-y-2 text-xs">
+                    <div className="font-semibold text-[#061507] uppercase tracking-wider text-xs">
+                      Designated Data Grievance Officer
                     </div>
-                    <div className="space-y-1 font-light text-[#F9F7F2]/85">
-                      <p><strong>Designation:</strong> Data Protection & Grievance Officer, Shakti Abhushan Atelier</p>
-                      <p><strong>Atelier Location:</strong> Johari Bazaar Heritage District, Jaipur 302003, Rajasthan, India</p>
+                    <div className="space-y-1 font-light text-[#637066]">
+                      <p><strong>Designation:</strong> Data Protection & Grievance Officer, Shakti Abhushan</p>
+                      <p><strong>Location:</strong> Johari Bazaar Heritage District, Jaipur 302003, Rajasthan, India</p>
                       <p>
-                        <strong>Dedicated Email:</strong>{' '}
-                        <a href="mailto:test@shaktiabhushan.com" className="text-[#D7AD76] underline underline-offset-2">
-                          test@shaktiabhushan.com
-                        </a>{' '}
-                        (Subject: "DPDP Grievance / Data Request")
+                        <strong>Communication:</strong> Inquiries may be addressed via official customer care or WhatsApp.
                       </p>
                       <p><strong>Statutory Turnaround:</strong> All verified Data Principal requests will be acknowledged within 48 hours and formally redressed within statutory timelines (not exceeding 30 days).</p>
                     </div>

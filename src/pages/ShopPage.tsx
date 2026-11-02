@@ -257,25 +257,14 @@ export const ShopPage: React.FC = () => {
         </button>
       )}
 
-      {/* Concierge Help Box in Sidebar */}
-      <div className="p-4 rounded-2xl bg-[#061507] text-[#F9F7F2] space-y-2 border border-[#C39C69]/30">
-        <div className="flex items-center gap-2 text-[#D7AD76] text-[11px] font-semibold uppercase tracking-wider">
-          <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
-          <span>Bridal Consultation</span>
+      {/* Assistance Information */}
+      <div className="p-4 rounded-2xl bg-[#F0EBE1] text-[#061507] space-y-2 border border-[#061507]/[0.08]">
+        <div className="flex items-center gap-2 text-[#C39C69] text-xs font-semibold uppercase tracking-wider">
+          <span>Bridal Consultations</span>
         </div>
-        <p className="text-[11px] text-[#F9F7F2]/75 leading-relaxed font-light">
-          Need styling assistance or custom brass sizing? Chat live with our Jaipur atelier concierge.
+        <p className="text-xs text-[#637066] leading-relaxed font-light">
+          Need custom sizing or bridal coordination? Connect with our team for personalized styling advice.
         </p>
-        <a
-          href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
-            'Hello Shakti Abhushan! I am browsing your jewellery collection and would like personal styling assistance.'
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mt-1 text-[11px] font-semibold text-[#D7AD76] hover:underline"
-        >
-          Open WhatsApp Concierge →
-        </a>
       </div>
     </div>
   );
@@ -287,13 +276,13 @@ export const ShopPage: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3 pt-4">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C39C69] font-medium block">
-            Atelier Catalogue • सम्पूर्ण संग्रह
+            View All Products
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#061507] tracking-tight">
             Handcrafted Indian Brass
           </h1>
           <p className="text-sm text-[#637066] font-light leading-relaxed">
-            Every piece is forged in solid brass with an antique gold micron finish. Filter by category, craftsmanship, and tier. Direct orders confirmed on WhatsApp.
+            Every piece is forged in solid brass with an antique gold micron finish. Filter by category, craftsmanship, and tier.
           </p>
         </div>
 
@@ -396,27 +385,13 @@ export const ShopPage: React.FC = () => {
 
             {/* Product Card Grid */}
             {filteredProducts.length === 0 ? (
-              <div className="py-20 px-6 text-center space-y-4 bg-white rounded-3xl border border-[#061507]/[0.08] shadow-card-soft">
-                <Sparkles className="w-8 h-8 text-[#C39C69] mx-auto" />
+              <div className="py-20 px-6 text-center space-y-4 bg-white rounded-3xl border border-[#061507]/[0.08]">
                 <h3 className="font-serif text-2xl text-[#061507]">
-                  Atelier Catalogue in Preparation
+                  Collection in Preparation
                 </h3>
-                <p className="text-xs text-[#637066] max-w-md mx-auto leading-relaxed">
-                  Our handcrafted brass jewellery catalogue is currently being updated with verified client pieces and certified specifications. Connect directly with our WhatsApp concierge for live piece viewings and bespoke orders.
+                <p className="text-xs text-[#637066] max-w-md mx-auto leading-relaxed font-light">
+                  Our handcrafted brass jewellery catalogue is currently being updated with verified pieces and certified specifications. Direct inquiries and custom bridal consultations are welcomed.
                 </p>
-                <div className="pt-2">
-                  <a
-                    href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
-                      'Hello Shakti Abhushan! I am inquiring about available pieces in your brass jewellery collection.'
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs uppercase tracking-widest font-semibold"
-                  >
-                    <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
-                    <span>Inquire on WhatsApp</span>
-                  </a>
-                </div>
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-7">

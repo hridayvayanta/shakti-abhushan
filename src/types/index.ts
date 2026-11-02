@@ -32,7 +32,7 @@ export interface CartItem {
 export interface CollectionMeta {
   id: CategoryType;
   name: string;
-  hindiTitle: string;
+  hindiTitle?: string;
   subtitle: string;
   description: string;
   image: string;

@@ -30,7 +30,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0, on
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group flex flex-col bg-white rounded-xl border border-[#061507]/[0.08] hover:border-[#C39C69]/50 shadow-card-soft hover:shadow-card-hover transition-all duration-300 overflow-hidden"
+      className="group flex flex-col bg-white rounded-xl border border-[#061507]/[0.08] hover:border-[#C39C69]/50 transition-all duration-300 overflow-hidden"
     >
       {/* Product Image Stage */}
       <div className="relative aspect-square w-full overflow-hidden bg-[#F4F1EA]">

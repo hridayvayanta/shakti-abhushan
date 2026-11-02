@@ -49,7 +49,7 @@ export const FaqSection: React.FC = () => {
         {/* Header */}
         <div className="text-center space-y-3">
           <span className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-medium block">
-            Customer Guidance • प्रश्न एवं उत्तर
+            Customer Guidance
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl text-[#061507]">
             Frequently Asked Questions
@@ -91,10 +91,10 @@ export const FaqSection: React.FC = () => {
         </div>
 
         {/* Quick WhatsApp Assistance Banner */}
-        <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] shadow-card-soft text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-6 rounded-2xl bg-white border border-[#061507]/[0.08] text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 className="font-serif text-xl text-[#061507]">Have a custom question or styling enquiry?</h4>
-            <p className="text-xs text-[#637066] mt-0.5">Our atelier concierge responds directly on WhatsApp.</p>
+            <p className="text-xs text-[#637066] mt-0.5">Our team responds directly on WhatsApp.</p>
           </div>
           <a
             href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
