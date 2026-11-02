@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#061507] text-[#F9F7F2] border-t border-[#C39C69]/25 pt-16 sm:pt-20 pb-12 relative overflow-hidden">
+    <footer className="bg-[#061507] text-[#F9F7F2] border-t border-[#C39C69]/25 pt-16 sm:pt-20 pb-16 sm:pb-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Grid */}
