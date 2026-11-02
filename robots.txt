@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Atelier XML Sitemap
+Sitemap: https://hridayvayanta.github.io/shakti-abhushan/sitemap.xml
