@@ -58,9 +58,9 @@ const RAW_PRODUCTS: Product[] = [
     featured: true,
     badge: 'Bestseller',
     images: [
-      '/products/earring-chandbali.jpg',
-      '/products/earring-chandbali-detail.jpg',
-      '/products/earring-chandbali-macro.jpg'
+      '/products/earring-vintage.jpg',
+      '/products/earring-vintage-detail.jpg',
+      '/products/earring-vintage-macro.jpg'
     ],
     modelType: 'jhumka'
   },
@@ -87,9 +87,9 @@ const RAW_PRODUCTS: Product[] = [
     featured: true,
     badge: 'Bestseller',
     images: [
-      '/products/bangle-antique.jpg',
-      '/products/bangle-antique-detail.jpg',
-      '/products/bangle-antique-macro.jpg'
+      '/products/bangle-gold.jpg',
+      '/products/bangle-gold-detail.jpg',
+      '/products/bangle-gold-macro.jpg'
     ],
     modelType: 'kada'
   },
