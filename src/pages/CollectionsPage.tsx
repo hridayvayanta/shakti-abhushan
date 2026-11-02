@@ -66,7 +66,7 @@ export const CollectionsPage: React.FC = () => {
 
                   {/* Right Preview Gallery */}
                   <div className={`lg:col-span-7 ${isEven ? 'order-2' : 'order-2 lg:order-1'}`}>
-                    {categoryProducts.length > 0 ? (
+                    {categoryProducts.length > 1 ? (
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                         {categoryProducts.map((p) => (
                           <Link
@@ -85,6 +85,52 @@ export const CollectionsPage: React.FC = () => {
                             </div>
                           </Link>
                         ))}
+                      </div>
+                    ) : categoryProducts.length === 1 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
+                        <Link
+                          to={`/product/${categoryProducts[0].id}`}
+                          className="group relative aspect-[4/3] sm:aspect-auto min-h-[220px] rounded-2xl overflow-hidden bg-[#F4F1EA] border border-[#061507]/[0.08] shadow-sm flex flex-col justify-end p-5"
+                        >
+                          <img
+                            src={categoryProducts[0].images[0]}
+                            alt={categoryProducts[0].name}
+                            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                          <div className="relative z-10 space-y-1 text-white">
+                            <span className="text-[10px] uppercase font-mono tracking-wider text-[#D7AD76] block">
+                              Showcase Piece • आभूषण
+                            </span>
+                            <span className="font-serif text-base font-medium block">{categoryProducts[0].name}</span>
+                            <span className="text-xs text-[#D7AD76] font-mono font-semibold block">
+                              ₹{categoryProducts[0].price.toLocaleString('en-IN')}
+                            </span>
+                          </div>
+                        </Link>
+                        <div className="relative aspect-[4/3] sm:aspect-auto min-h-[220px] rounded-2xl overflow-hidden bg-[#F4F1EA] border border-[#061507]/[0.08] shadow-sm flex flex-col justify-end p-5">
+                          <img
+                            src={col.image}
+                            alt={col.name}
+                            className="absolute inset-0 w-full h-full object-cover opacity-85"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                          <div className="relative z-10 space-y-2 text-white">
+                            <span className="text-[10px] uppercase font-mono tracking-wider text-[#D7AD76] block">
+                              Atelier Heritage
+                            </span>
+                            <p className="text-xs text-white/90 font-light leading-relaxed">
+                              {col.subtitle}
+                            </p>
+                            <Link
+                              to={`/shop?category=${col.id}`}
+                              className="inline-flex items-center gap-1.5 text-xs text-[#D7AD76] hover:underline font-semibold"
+                            >
+                              <span>Explore All {col.name}</span>
+                              <ArrowRight className="w-3 h-3" />
+                            </Link>
+                          </div>
+                        </div>
                       </div>
                     ) : (
                       <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-[#F4F1EA] border border-[#061507]/[0.08] shadow-card-soft">

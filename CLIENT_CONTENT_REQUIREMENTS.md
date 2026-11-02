@@ -13,7 +13,7 @@ This document establishes the official content audit for the Shakti Abhushan eco
 | **Cinematic Loading Animation** | ✅ **PRESERVED** | GSAP shared-element transition (center screen $\to$ permanent header). |
 | **Website Design & Theme** | ✅ **PRESERVED** | Forest Green (`#061507`), Antique Gold (`#C39C69`), Warm Ivory (`#F9F7F2`), Pure White (`#FFFFFF`). |
 | **Ecommerce Infrastructure** | ✅ **FUNCTIONAL** | Shopping bag drawer, state management, WhatsApp checkout formatting. |
-| **Product Inventory & Pricing** | ⚠️ **PENDING CLIENT DATA** | All 12 fictional placeholder items purged. Requires real product catalogue. |
+| **Product Inventory & Pricing** | 🔍 **SHOWCASE BLUEPRINTS ACTIVE** | Exactly 1 reference sample piece per category (5 total) loaded to demonstrate card rendering, detail pages, and WhatsApp checkout to the client. |
 | **Customer Reviews & Testimonials** | ⚠️ **PENDING CLIENT DATA** | Fictional reviews purged. Awaiting authentic verified buyer reviews. |
 | **Reel Videos** | ⚠️ **PENDING CLIENT DATA** | Placeholder sample reels removed. Awaiting authentic client vertical videos. |
 | **Business Registration & Tax Details** | ⚠️ **PENDING CLIENT DATA** | GSTIN, registered address, and official business entity name required. |
@@ -47,8 +47,15 @@ This document establishes the official content audit for the Shakti Abhushan eco
 
 ## 3. Required Client Content (To Be Provided by Client)
 
-### 3.1 Real Product Catalogue
-For each piece to be featured on the platform, provide the following details:
+### 3.1 Real Product Catalogue & Active Showcase Blueprints
+To help the client immediately understand how products render across the store, 1 reference piece per category (5 total) is currently populated as a model:
+- **Necklaces & Chokers**: Rajputana Hansli Choker (`rajputana-hansli-choker`) — ₹3,850
+- **Earrings & Jhumkas**: Chandrika Bell Jhumkas (`chandrika-bell-jhumkas`) — ₹1,950
+- **Bangles & Kadas**: Gajraj Royal Cuff Kada (`gajraj-royal-cuff-kada`) — ₹2,450
+- **Rings & Accessories**: Kamal Patra Statement Ring (`kamal-patra-cocktail-ring`) — ₹1,450
+- **Bridal & Jewellery Sets**: Rajasi Temple Bridal Set (`rajasi-temple-bridal-set`) — ₹6,850
+
+For each new piece to be added by the client, provide the following details:
 1. **Product Name** (English & Devanagari, e.g. *Rajwada Kundan Choker • राजवाड़ा चोकर*)
 2. **Category**:
    - Necklaces & Chokers (`necklaces`)

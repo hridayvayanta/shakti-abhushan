@@ -52,7 +52,7 @@ export const ProductDetailPage: React.FC = () => {
   const associatedVideo = SHOPPABLE_VIDEOS.find((v) => v.productId === product.id);
 
   const relatedProducts = PRODUCTS.filter(
-    (p) => p.category === product.category && p.id !== product.id
+    (p) => p.id !== product.id
   ).slice(0, 4);
 
   const handleAddToCart = () => {

@@ -94,8 +94,8 @@ export const HomePage: React.FC = () => {
       {/* 5. FULL-WIDTH EDITORIAL SHOWCASE (Section 08 - Pure White) */}
       <EditorialShowcaseSection />
 
-      {/* 6. NEW ARRIVALS (Rendered when verified products are available) */}
-      {newArrivals.length > 0 && (
+      {/* 6. NEW ARRIVALS (Rendered when 4+ items available to fill grid) */}
+      {newArrivals.length >= 4 && (
         <section className="py-20 sm:py-24 bg-[#F9F7F2] border-b border-[#061507]/[0.06]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-12 sm:mb-16">
