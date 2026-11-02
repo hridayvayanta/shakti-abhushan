@@ -7,8 +7,8 @@ export const NotFoundPage: React.FC = () => {
   const { whatsAppNumber } = useCart();
 
   return (
-    <div className="min-h-[75vh] flex items-center justify-center bg-[#F9F7F2] dark:bg-[#071909] text-[#263028] dark:text-[#F9F7F2] px-4 py-16 sm:py-24 transition-colors">
-      <div className="max-w-xl w-full text-center space-y-8 bg-white dark:bg-[#0A1B0D] p-8 sm:p-12 rounded-3xl border border-[#061507]/[0.08] dark:border-[#C39C69]/20 shadow-xl">
+    <div className="min-h-[75vh] flex items-center justify-center bg-[#F9F7F2] text-[#263028] px-4 py-16 sm:py-24">
+      <div className="max-w-xl w-full text-center space-y-8 bg-white p-8 sm:p-12 rounded-3xl border border-[#061507]/[0.08] shadow-xl">
         
         {/* Emblem indicator */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.25em] font-medium text-[#C39C69] bg-[#C39C69]/10 border border-[#C39C69]/25">
@@ -17,13 +17,13 @@ export const NotFoundPage: React.FC = () => {
         </div>
 
         <div className="space-y-3">
-          <h1 className="font-serif text-5xl sm:text-6xl text-[#061507] dark:text-[#F9F7F2] tracking-tight">
+          <h1 className="font-serif text-5xl sm:text-6xl text-[#061507] tracking-tight">
             This Piece Has Moved
           </h1>
           <p className="font-serif italic text-xl text-[#C39C69] font-light">
             राजसी आभूषण अप्राप्य
           </p>
-          <p className="text-sm sm:text-base text-[#637066] dark:text-[#F9F7F2]/75 max-w-md mx-auto leading-relaxed font-light pt-2">
+          <p className="text-sm sm:text-base text-[#637066] max-w-md mx-auto leading-relaxed font-light pt-2">
             The jewellery showcase or page you are seeking may have been repositioned or retired from the current collection.
           </p>
         </div>
@@ -32,7 +32,7 @@ export const NotFoundPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
           <Link
             to="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#061507] dark:bg-[#C39C69] text-[#F9F7F2] dark:text-[#061507] text-xs font-semibold tracking-wider uppercase hover:bg-[#0A1B0D] dark:hover:bg-[#D7AD76] transition-all shadow-md"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#061507] text-[#F9F7F2] text-xs font-semibold tracking-wider uppercase hover:bg-[#0A1B0D] transition-all shadow-md"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Return to Showroom</span>
@@ -40,7 +40,7 @@ export const NotFoundPage: React.FC = () => {
 
           <Link
             to="/shop"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#061507]/20 dark:border-[#C39C69]/40 text-[#061507] dark:text-[#F9F7F2] text-xs font-semibold tracking-wider uppercase hover:bg-[#061507]/5 dark:hover:bg-white/5 transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#061507]/20 text-[#061507] text-xs font-semibold tracking-wider uppercase hover:bg-[#061507]/5 transition-all"
           >
             <ShoppingBag className="w-4 h-4 text-[#C39C69]" />
             <span>Explore All Jewellery</span>
@@ -48,7 +48,7 @@ export const NotFoundPage: React.FC = () => {
         </div>
 
         {/* WhatsApp concierge fallback */}
-        <div className="pt-4 border-t border-[#061507]/[0.06] dark:border-[#C39C69]/15 text-xs text-[#637066] dark:text-[#F9F7F2]/60">
+        <div className="pt-4 border-t border-[#061507]/[0.06] text-xs text-[#637066]">
           Looking for a specific heirloom design?{' '}
           <a
             href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(

@@ -137,45 +137,4 @@ html, body {
   animation: fadeIn 0.25s ease-out forwards;
 }
 
-/* Luxury Darbar Dark Mode Overrides */
-html.dark body {
-  background-color: #071909;
-  color: #F9F7F2;
-}
-
-html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark .font-serif {
-  color: #F9F7F2;
-}
-
-html.dark .bg-white {
-  background-color: #0A1B0D;
-}
-
-html.dark .bg-\[\#F9F7F2\] {
-  background-color: #071909;
-}
-
-html.dark .bg-\[\#F4F1EA\] {
-  background-color: #051406;
-}
-
-html.dark .text-\[\#263028\] {
-  color: #F9F7F2;
-}
-
-html.dark .text-\[\#061507\] {
-  color: #D7AD76;
-}
-
-html.dark .text-\[\#637066\] {
-  color: #A3B1A7;
-}
-
-html.dark .border-\[\#061507\]\/\[0\.08\],
-html.dark .border-\[\#061507\]\/\[0\.06\],
-html.dark .border-\[\#061507\]\/10,
-html.dark .border-\[\#061507\]\/15,
-html.dark .border-\[\#061507\]\/20 {
-  border-color: rgba(195, 156, 105, 0.25);
-}
 

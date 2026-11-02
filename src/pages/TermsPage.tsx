@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LegalSidebar } from '../components/LegalSidebar';
-import { FileText, Hammer, ShieldCheck, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
+import { FileText, Hammer, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const TermsPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#F9F7F2] dark:bg-[#061507] text-[#263028] dark:text-[#F9F7F2] pt-12 pb-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+    <div className="min-h-screen bg-[#F9F7F2] text-[#263028] pt-12 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-10 pt-4">
         
         {/* Header Section */}
@@ -13,10 +13,10 @@ export const TermsPage: React.FC = () => {
           <span className="text-xs uppercase tracking-[0.3em] text-[#C39C69] font-medium block">
             Maison Agreements • नियम एवं शर्तें
           </span>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#061507] dark:text-[#F9F7F2] tracking-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#061507] tracking-tight">
             Terms & Conditions
           </h1>
-          <p className="text-sm text-[#637066] dark:text-[#F9F7F2]/75 font-light leading-relaxed">
+          <p className="text-sm text-[#637066] font-light leading-relaxed">
             Please review the atelier conditions governing your browsing experience, handcrafted jewellery characteristics, and WhatsApp order fulfillment.
           </p>
           <div className="text-xs text-[#C39C69] font-mono tracking-wider pt-1">
@@ -35,36 +35,36 @@ export const TermsPage: React.FC = () => {
           {/* Main Legal Content (8 columns on lg) */}
           <div className="lg:col-span-8 space-y-6">
             
-            <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0A1B0D] border border-[#061507]/[0.08] dark:border-[#C39C69]/25 shadow-card-soft space-y-6">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#061507]/[0.08] shadow-card-soft space-y-6">
               
               {/* Highlight Pillars */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-6 border-b border-[#061507]/[0.08] dark:border-[#C39C69]/20">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-6 border-b border-[#061507]/[0.08]">
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-[#061507] dark:text-[#D7AD76]">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#061507]">
                     <Hammer className="w-4 h-4 text-[#C39C69]" />
                     <span>Artisanal Heritage</span>
                   </div>
-                  <p className="text-[11px] text-[#637066] dark:text-[#F9F7F2]/70 font-light">
+                  <p className="text-[11px] text-[#637066] font-light">
                     Every piece is crafted by hereditary metalsmiths with natural patina variance.
                   </p>
                 </div>
 
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-[#061507] dark:text-[#D7AD76]">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#061507]">
                     <CheckCircle2 className="w-4 h-4 text-[#25D366]" />
                     <span>WhatsApp Verification</span>
                   </div>
-                  <p className="text-[11px] text-[#637066] dark:text-[#F9F7F2]/70 font-light">
+                  <p className="text-[11px] text-[#637066] font-light">
                     Orders are verified by our concierge before payment and dispatch.
                   </p>
                 </div>
 
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-[#061507] dark:text-[#D7AD76]">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#061507]">
                     <ShieldCheck className="w-4 h-4 text-[#C39C69]" />
                     <span>Insured Transit</span>
                   </div>
-                  <p className="text-[11px] text-[#637066] dark:text-[#F9F7F2]/70 font-light">
+                  <p className="text-[11px] text-[#637066] font-light">
                     100% complimentary insured transit protection across all Indian pin codes.
                   </p>
                 </div>
@@ -72,11 +72,11 @@ export const TermsPage: React.FC = () => {
 
               {/* Section 1 */}
               <section className="space-y-2.5">
-                <h2 className="font-serif text-2xl text-[#061507] dark:text-[#F9F7F2] font-medium flex items-center gap-2">
+                <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">01.</span>
                   <span>Brand Identity & Intellectual Property</span>
                 </h2>
-                <div className="text-sm text-[#637066] dark:text-[#F9F7F2]/80 leading-relaxed font-light space-y-2">
+                <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
                     The name <strong>SHAKTI ABHUSHAN</strong>, our distinctive Devanagari calligraphy ("शक्ति आभूषण"), the registered royal crest ornament, jewelry design compositions, editorial lookbook photography, video reels, and catalog descriptions are the exclusive intellectual property of Shakti Abhushan.
                   </p>
@@ -87,12 +87,12 @@ export const TermsPage: React.FC = () => {
               </section>
 
               {/* Section 2 */}
-              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06] dark:border-[#C39C69]/15">
-                <h2 className="font-serif text-2xl text-[#061507] dark:text-[#F9F7F2] font-medium flex items-center gap-2">
+              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06]">
+                <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">02.</span>
                   <span>Handcrafted Artisanal Characteristics</span>
                 </h2>
-                <div className="text-sm text-[#637066] dark:text-[#F9F7F2]/80 leading-relaxed font-light space-y-2">
+                <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
                     Our ornaments are forged in solid brass using authentic Indian metalsmithing traditions, including die-casting, repoussé engraving, Kundan setting, and multi-layer antique gold micron electroplating.
                   </p>
@@ -107,12 +107,12 @@ export const TermsPage: React.FC = () => {
               </section>
 
               {/* Section 3 */}
-              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06] dark:border-[#C39C69]/15">
-                <h2 className="font-serif text-2xl text-[#061507] dark:text-[#F9F7F2] font-medium flex items-center gap-2">
+              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06]">
+                <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">03.</span>
                   <span>Order Placement & WhatsApp Concierge Handoff</span>
                 </h2>
-                <div className="text-sm text-[#637066] dark:text-[#F9F7F2]/80 leading-relaxed font-light space-y-2">
+                <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
                     Submitting your shopping bag through our WhatsApp link generates a formal order enquiry with our atelier concierge team:
                   </p>
@@ -124,12 +124,12 @@ export const TermsPage: React.FC = () => {
               </section>
 
               {/* Section 4 */}
-              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06] dark:border-[#C39C69]/15">
-                <h2 className="font-serif text-2xl text-[#061507] dark:text-[#F9F7F2] font-medium flex items-center gap-2">
+              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06]">
+                <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">04.</span>
                   <span>Pricing, Invoicing & Taxes</span>
                 </h2>
-                <div className="text-sm text-[#637066] dark:text-[#F9F7F2]/80 leading-relaxed font-light space-y-2">
+                <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
                     All prices displayed on this website are listed in Indian Rupees (₹ INR). Prices are inclusive of applicable Goods and Services Tax (GST) unless explicitly indicated otherwise.
                   </p>
@@ -140,12 +140,12 @@ export const TermsPage: React.FC = () => {
               </section>
 
               {/* Section 5 */}
-              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06] dark:border-[#C39C69]/15">
-                <h2 className="font-serif text-2xl text-[#061507] dark:text-[#F9F7F2] font-medium flex items-center gap-2">
+              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06]">
+                <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">05.</span>
                   <span>Transit, Delivery & Parcel Inspection</span>
                 </h2>
-                <div className="text-sm text-[#637066] dark:text-[#F9F7F2]/80 leading-relaxed font-light space-y-2">
+                <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
                     All parcels are dispatched in tamper-evident security packaging with registered courier tracking. Upon receiving the parcel:
                   </p>
@@ -162,12 +162,12 @@ export const TermsPage: React.FC = () => {
               </section>
 
               {/* Section 6 */}
-              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06] dark:border-[#C39C69]/15">
-                <h2 className="font-serif text-2xl text-[#061507] dark:text-[#F9F7F2] font-medium flex items-center gap-2">
+              <section className="space-y-2.5 pt-4 border-t border-[#061507]/[0.06]">
+                <h2 className="font-serif text-2xl text-[#061507] font-medium flex items-center gap-2">
                   <span className="text-[#C39C69] text-lg font-sans">06.</span>
                   <span>Governing Law & Jurisdiction</span>
                 </h2>
-                <div className="text-sm text-[#637066] dark:text-[#F9F7F2]/80 leading-relaxed font-light space-y-2">
+                <div className="text-sm text-[#637066] leading-relaxed font-light space-y-2">
                   <p>
                     These terms shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or in connection with these terms, orders, or transactions shall be subject to the exclusive jurisdiction of the competent courts in Jaipur, Rajasthan.
                   </p>
@@ -175,13 +175,13 @@ export const TermsPage: React.FC = () => {
               </section>
 
               {/* Cross-Link Card to Privacy Policy */}
-              <div className="pt-6 border-t border-[#061507]/[0.08] dark:border-[#C39C69]/20 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#F9F7F2] dark:bg-white/5 p-5 rounded-2xl">
+              <div className="pt-6 border-t border-[#061507]/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#F9F7F2] p-5 rounded-2xl">
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest font-semibold text-[#061507] dark:text-[#D7AD76]">
+                  <h4 className="text-xs uppercase tracking-widest font-semibold text-[#061507]">
                     Privacy & Data Governance
                   </h4>
-                  <p className="text-xs text-[#637066] dark:text-[#F9F7F2]/70 font-light">
-                    Learn how we safeguard client confidentiality, delivery addresses, and WhatsApp order handoffs.
+                  <p className="text-xs text-[#637066] font-light">
+                    Learn how we safeguard client confidentiality, delivery addresses, and WhatsApp order handoffs under India's DPDP Act, 2023.
                   </p>
                 </div>
                 <Link

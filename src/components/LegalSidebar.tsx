@@ -33,7 +33,7 @@ export const LegalSidebar: React.FC<LegalSidebarProps> = () => {
   return (
     <aside className="space-y-6">
       {/* 1. Policy Navigation Directory */}
-      <div className="bg-white dark:bg-[#0A1B0D] p-5 sm:p-6 rounded-3xl border border-[#061507]/[0.08] dark:border-[#C39C69]/25 shadow-card-soft">
+      <div className="bg-white p-5 sm:p-6 rounded-3xl border border-[#061507]/[0.08] shadow-card-soft">
         <h3 className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-semibold mb-4 flex items-center gap-2">
           <FileText className="w-3.5 h-3.5 text-[#D7AD76]" />
           <span>Legal & Atelier Policies</span>
@@ -50,14 +50,14 @@ export const LegalSidebar: React.FC<LegalSidebarProps> = () => {
                 className={`flex items-start gap-3 p-3 rounded-2xl transition-all duration-200 ${
                   isActive
                     ? 'bg-[#061507] text-[#F9F7F2] shadow-sm'
-                    : 'text-[#263028] dark:text-[#F9F7F2]/80 hover:bg-[#F9F7F2] dark:hover:bg-white/5'
+                    : 'text-[#263028] hover:bg-[#F9F7F2]'
                 }`}
               >
                 <div
                   className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ${
                     isActive
                       ? 'bg-[#C39C69] text-[#061507]'
-                      : 'bg-[#F9F7F2] dark:bg-white/5 text-[#C39C69]'
+                      : 'bg-[#F9F7F2] text-[#C39C69]'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -65,14 +65,14 @@ export const LegalSidebar: React.FC<LegalSidebarProps> = () => {
                 <div className="min-w-0">
                   <div
                     className={`text-xs font-semibold tracking-wide ${
-                      isActive ? 'text-[#D7AD76]' : 'text-[#061507] dark:text-[#F9F7F2]'
+                      isActive ? 'text-[#D7AD76]' : 'text-[#061507]'
                     }`}
                   >
                     {item.name}
                   </div>
                   <div
                     className={`text-[11px] truncate font-light ${
-                      isActive ? 'text-[#F9F7F2]/75' : 'text-[#637066] dark:text-[#F9F7F2]/60'
+                      isActive ? 'text-[#F9F7F2]/75' : 'text-[#637066]'
                     }`}
                   >
                     {item.desc}
@@ -126,8 +126,8 @@ export const LegalSidebar: React.FC<LegalSidebarProps> = () => {
       </div>
 
       {/* 3. Statutory Compliance Card */}
-      <div className="p-4 rounded-2xl bg-[#F0EBE1] dark:bg-white/5 border border-[#061507]/[0.06] dark:border-white/10 text-[11px] text-[#637066] dark:text-[#F9F7F2]/70 leading-relaxed space-y-1.5">
-        <div className="font-semibold text-[#061507] dark:text-[#D7AD76] flex items-center gap-1.5">
+      <div className="p-4 rounded-2xl bg-[#F0EBE1] border border-[#061507]/[0.06] text-[11px] text-[#637066] leading-relaxed space-y-1.5">
+        <div className="font-semibold text-[#061507] flex items-center gap-1.5">
           <ShieldCheck className="w-3.5 h-3.5 text-[#C39C69]" />
           <span>Statutory Compliance</span>
         </div>
