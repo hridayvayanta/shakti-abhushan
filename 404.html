@@ -1,76 +1,25 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <!-- Force HTTPS in Production & Permanent Light Mode -->
-    <script>
-      if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-        window.location.replace('https:' + window.location.href.substring(window.location.protocol.length));
-      }
-      try {
-        localStorage.removeItem('sa_theme');
-        document.documentElement.classList.remove('dark');
-      } catch (e) {}
-    </script>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-
-    <!-- Favicon & Touch Icons -->
-    <link rel="icon" type="image/x-icon" href="/shakti-abhushan/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/shakti-abhushan/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/shakti-abhushan/apple-touch-icon.png" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>SHAKTI ABHUSHAN — Luxury Handcrafted Indian Brass Jewellery</title>
-    <meta name="description" content="Immerse yourself in Shakti Abhushan — Authentic Indian brass jewellery crafted with royal Jaipur heritage, antique gold micron finishes, and direct WhatsApp concierge orders." />
-    <meta name="keywords" content="Shakti Abhushan, Indian brass jewellery, antique gold jewellery, choker, necklace, jhumka, bangles, Jaipur handcrafted jewellery, wedding jewellery" />
-    <meta name="author" content="Shakti Abhushan Atelier" />
-    <link rel="canonical" href="https://hridayvayanta.github.io/shakti-abhushan/" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="SHAKTI ABHUSHAN" />
-    <meta property="og:url" content="https://hridayvayanta.github.io/shakti-abhushan/" />
-    <meta property="og:title" content="SHAKTI ABHUSHAN — Luxury Handcrafted Indian Brass Jewellery" />
-    <meta property="og:description" content="Discover timeless Indian brass jewellery handcrafted with antique gold micron finishes. Curated royal chokers, temple bangles, jhumkas, and necklaces." />
-    <meta property="og:image" content="https://hridayvayanta.github.io/shakti-abhushan/og-image.jpg" />
-    <meta property="og:image:secure_url" content="https://hridayvayanta.github.io/shakti-abhushan/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="SHAKTI ABHUSHAN — Royal Indian Brass Jewellery Atelier" />
-    <meta property="og:locale" content="en_IN" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@shaktiabhushan" />
-    <meta name="twitter:title" content="SHAKTI ABHUSHAN — Luxury Handcrafted Indian Brass Jewellery" />
-    <meta name="twitter:description" content="Discover timeless Indian brass jewellery handcrafted with antique gold micron finishes. Direct orders on WhatsApp." />
-    <meta name="twitter:image" content="https://hridayvayanta.github.io/shakti-abhushan/og-image.jpg" />
-    
-    <!-- Google Fonts: Cormorant Garamond & Manrope -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Header match color -->
-    <meta name="theme-color" content="#061507" />
-
-    <!-- Single Page Apps for GitHub Pages routing restoration -->
+    <meta charset="utf-8">
+    <title>SHAKTI ABHUSHAN</title>
     <script type="text/javascript">
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&');
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location));
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // pathSegmentsToKeep is 1 for repository pages: https://<username>.github.io/<repo-name>/
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
-    <script type="module" crossorigin src="/shakti-abhushan/assets/index-B7yjspea.js"></script>
-    <link rel="stylesheet" crossorigin href="/shakti-abhushan/assets/index-BO8ofm1F.css">
   </head>
-  <body class="bg-[#F9F7F2] text-[#263028] font-sans antialiased selection:bg-[#C39C69] selection:text-[#FFFFFF] overflow-x-hidden min-h-screen">
-    <div id="root"></div>
+  <body>
   </body>
 </html>
