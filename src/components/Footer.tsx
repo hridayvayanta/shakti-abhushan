@@ -48,16 +48,16 @@ export const Footer: React.FC = () => {
                 <MessageCircle className="w-5 h-5" />
               </a>
               <a
-                href="tel:+919876543210"
+                href="tel:0000000000"
                 className="w-10 h-10 rounded-full border border-[#C39C69]/40 bg-[#0A1B0D] flex items-center justify-center text-[#D7AD76] hover:border-[#D7AD76] hover:scale-105 transition-all"
-                title="Call +91 98765 43210"
+                title="Call 0000000000"
               >
                 <Phone className="w-5 h-5" />
               </a>
               <a
-                href="mailto:care@shaktiabhushan.com?subject=Shakti%20Abhushan%20Jewellery%20Inquiry"
+                href="mailto:test@shaktiabhushan.com?subject=Shakti%20Abhushan%20Jewellery%20Inquiry"
                 className="w-10 h-10 rounded-full border border-[#C39C69]/40 bg-[#0A1B0D] flex items-center justify-center text-[#D7AD76] hover:border-[#D7AD76] hover:scale-105 transition-all"
-                title="Email care@shaktiabhushan.com"
+                title="Email test@shaktiabhushan.com"
               >
                 <Mail className="w-5 h-5" />
               </a>
@@ -198,8 +198,8 @@ export const Footer: React.FC = () => {
             <span className="hidden sm:inline">•</span>
             <span>Insured Pan-India Transit</span>
             <span className="hidden sm:inline">•</span>
-            <a href="tel:+919876543210" className="hover:text-[#D7AD76] transition-colors">
-              +91 98765 43210
+            <a href="tel:0000000000" className="hover:text-[#D7AD76] transition-colors">
+              0000000000
             </a>
           </div>
         </div>

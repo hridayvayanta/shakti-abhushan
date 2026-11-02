@@ -47,7 +47,7 @@ export const WhatsAppCheckoutModal: React.FC = () => {
 
   const handleSavePhone = () => {
     if (!customPhone.trim() || customPhone.length < 10) {
-      error('Invalid WhatsApp Number', 'Please enter a valid phone number with country code (e.g. 919876543210).');
+      error('Invalid WhatsApp Number', 'Please enter a valid phone number (e.g. 0000000000).');
       return;
     }
     setWhatsAppNumber(customPhone);
@@ -151,7 +151,7 @@ export const WhatsAppCheckoutModal: React.FC = () => {
                   value={customPhone}
                   onChange={(e) => setCustomPhone(e.target.value)}
                   className="px-2 py-1 rounded bg-[#F9F7F2] text-xs font-mono text-[#061507] border border-[#061507]/30"
-                  placeholder="e.g. 919876543210"
+                  placeholder="e.g. 0000000000"
                 />
                 <button
                   onClick={handleSavePhone}

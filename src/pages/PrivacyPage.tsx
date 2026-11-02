@@ -282,8 +282,8 @@ export const PrivacyPage: React.FC = () => {
                       <p><strong>Atelier Location:</strong> Johari Bazaar Heritage District, Jaipur 302003, Rajasthan, India</p>
                       <p>
                         <strong>Dedicated Email:</strong>{' '}
-                        <a href="mailto:care@shaktiabhushan.com" className="text-[#D7AD76] underline underline-offset-2">
-                          care@shaktiabhushan.com
+                        <a href="mailto:test@shaktiabhushan.com" className="text-[#D7AD76] underline underline-offset-2">
+                          test@shaktiabhushan.com
                         </a>{' '}
                         (Subject: "DPDP Grievance / Data Request")
                       </p>

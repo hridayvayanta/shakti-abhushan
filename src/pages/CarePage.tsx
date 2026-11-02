@@ -67,7 +67,7 @@ export const CarePage: React.FC = () => {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <a
-              href="https://wa.me/919876543210?text=Hello%20Shakti%20Abhushan!%20I%20have%20a%20question%20about%20caring%20for%20my%20jewellery."
+              href="https://wa.me/0000000000?text=Hello%20Shakti%20Abhushan!%20I%20have%20a%20question%20about%20caring%20for%20my%20jewellery."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold"
@@ -76,11 +76,11 @@ export const CarePage: React.FC = () => {
               <span>Ask on WhatsApp</span>
             </a>
             <a
-              href="tel:+919876543210"
+              href="tel:0000000000"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#061507]/20 text-[#061507] hover:bg-black/5 text-xs uppercase tracking-widest font-semibold transition-all"
             >
               <Phone className="w-4 h-4 text-[#C39C69]" />
-              <span>Call +91 98765 43210</span>
+              <span>Call 0000000000</span>
             </a>
           </div>
         </div>

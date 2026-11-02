@@ -39,7 +39,7 @@ A luxury Indian brass jewellery ecommerce showroom inspired by clean, light, edi
 ### 5. Direct WhatsApp Checkout Drawer & Modal
 - Persistent cart state in `localStorage`.
 - Order modal capturing customer name, delivery city, and gift notes.
-- Formats structured order messages sent directly to WhatsApp (`+91 98765 43210`).
+- Formats structured order messages sent directly to WhatsApp (`0000000000`).
 
 ---
 

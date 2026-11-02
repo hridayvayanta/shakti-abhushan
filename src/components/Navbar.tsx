@@ -70,21 +70,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
         <span className="hidden md:inline text-[#F9F7F2]/90">
           Concierge Hotline:{' '}
           <a
-            href="tel:+919876543210"
+            href="tel:0000000000"
             className="text-[#D7AD76] hover:text-white underline underline-offset-2 transition-colors ml-1"
             title="Call Shakti Abhushan Concierge"
           >
-            +91 98765 43210
+            0000000000
           </a>
         </span>
         <span className="text-[#C39C69]/40 hidden lg:inline">•</span>
         <span className="hidden lg:inline text-[#F9F7F2]/90">
           <a
-            href="mailto:care@shaktiabhushan.com?subject=Shakti%20Abhushan%20Inquiry"
+            href="mailto:test@shaktiabhushan.com?subject=Shakti%20Abhushan%20Inquiry"
             className="text-[#D7AD76] hover:text-white transition-colors"
             title="Email Atelier Concierge"
           >
-            care@shaktiabhushan.com
+            test@shaktiabhushan.com
           </a>
         </span>
       </div>
@@ -292,18 +292,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             {/* Clickable Phone & Email Links */}
             <div className="grid grid-cols-2 gap-2 text-center text-xs pt-1">
               <a
-                href="tel:+919876543210"
+                href="tel:0000000000"
                 className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-white/5 text-[#F9F7F2]/80 hover:text-[#D7AD76] transition-colors"
-                title="Call Shakti Abhushan"
+                title="Call 0000000000"
               >
                 <Phone className="w-3.5 h-3.5 text-[#C39C69]" />
-                <span>Call Us</span>
+                <span>Call: 0000000000</span>
               </a>
 
               <a
-                href="mailto:care@shaktiabhushan.com?subject=Shakti%20Abhushan%20Enquiry"
+                href="mailto:test@shaktiabhushan.com?subject=Shakti%20Abhushan%20Enquiry"
                 className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-white/5 text-[#F9F7F2]/80 hover:text-[#D7AD76] transition-colors"
-                title="Email Shakti Abhushan"
+                title="Email test@shaktiabhushan.com"
               >
                 <Mail className="w-3.5 h-3.5 text-[#C39C69]" />
                 <span>Email Us</span>

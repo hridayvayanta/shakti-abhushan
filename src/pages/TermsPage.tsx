@@ -153,8 +153,8 @@ export const TermsPage: React.FC = () => {
                     <li>Do not accept parcels that show signs of severe external tampering, tearing, or unsealed tape.</li>
                     <li>We recommend clients record a continuous unboxing video when opening the parcel to swiftly assist in any rare shipping transit claim.</li>
                     <li>Any transit discrepancy must be reported within 48 hours of delivery to{' '}
-                      <a href="mailto:care@shaktiabhushan.com" className="text-[#C39C69] underline font-medium">
-                        care@shaktiabhushan.com
+                      <a href="mailto:test@shaktiabhushan.com" className="text-[#C39C69] underline font-medium">
+                        test@shaktiabhushan.com
                       </a>.
                     </li>
                   </ul>

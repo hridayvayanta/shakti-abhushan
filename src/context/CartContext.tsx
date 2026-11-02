@@ -19,9 +19,9 @@ interface CartContextType {
   getWhatsAppMessageText: (customerName?: string, customerCity?: string, notes?: string) => string;
 }
 
-// Configurable business WhatsApp number
+// Configurable business WhatsApp number (defaults to test phone number)
 export const DEFAULT_WHATSAPP_NUMBER =
-  (import.meta.env.VITE_WHATSAPP_NUMBER as string) || '919876543210';
+  (import.meta.env.VITE_WHATSAPP_NUMBER as string) || '0000000000';
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
@@ -38,7 +38,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [whatsAppNumber, setWhatsAppNumberState] = useState<string>(() => {
     try {
       const saved = localStorage.getItem('shakti_abhushan_wa_number');
-      return saved || DEFAULT_WHATSAPP_NUMBER;
+      if (saved && saved !== '919876543210') return saved;
+      return DEFAULT_WHATSAPP_NUMBER;
     } catch {
       return DEFAULT_WHATSAPP_NUMBER;
     }

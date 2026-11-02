@@ -108,19 +108,19 @@ export const LegalSidebar: React.FC<LegalSidebarProps> = () => {
           </a>
 
           <a
-            href="tel:+919876543210"
+            href="tel:0000000000"
             className="flex items-center gap-2.5 p-2 rounded-xl text-[#F9F7F2]/80 hover:text-white hover:bg-white/5 transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-[#D7AD76]" />
-            <span>+91 98765 43210</span>
+            <span>0000000000</span>
           </a>
 
           <a
-            href="mailto:care@shaktiabhushan.com?subject=Policy%20Inquiry%20-%20Shakti%20Abhushan"
+            href="mailto:test@shaktiabhushan.com?subject=Policy%20Inquiry%20-%20Shakti%20Abhushan"
             className="flex items-center gap-2.5 p-2 rounded-xl text-[#F9F7F2]/80 hover:text-white hover:bg-white/5 transition-colors"
           >
             <Mail className="w-3.5 h-3.5 text-[#D7AD76]" />
-            <span>care@shaktiabhushan.com</span>
+            <span>test@shaktiabhushan.com</span>
           </a>
         </div>
       </div>

@@ -86,5 +86,5 @@ For each new piece to be added by the client, provide the following details:
 ### 3.4 Official Business Details
 - **Registered Atelier Address**: Exact workshop / boutique address in Jaipur / Rajasthan.
 - **GSTIN & Business Entity Name**: For invoice generation on WhatsApp orders.
-- **Direct WhatsApp Concierge Number**: Current number configured: `+91 98765 43210`. Please confirm if this should be updated to client's live business WhatsApp number.
-- **Official Concierge Email**: Current email configured: `care@shaktiabhushan.com`.
+- **Direct WhatsApp Concierge Number**: Current test number configured: `0000000000`. Please provide the client's official live business WhatsApp number.
+- **Official Concierge Email**: Current test email configured: `test@shaktiabhushan.com`. Please provide the client's official customer support email.
