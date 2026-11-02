@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { assetUrl } from '../utils/assets';
+import { Instagram, Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
 
@@ -138,6 +139,34 @@ export const Footer: React.FC = () => {
             <span>Complimentary Insured Shipping Across India</span>
             <span className="hidden sm:inline">•</span>
             <span>Handcrafted in India</span>
+          </div>
+        </div>
+
+        {/* Agency Colophon: Subtle, Prestigious Sign-Off */}
+        <div className="pt-6 mt-6 border-t border-[#C39C69]/15 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#F9F7F2]/50 tracking-wider font-light">
+          <div>
+            Built & Managed by <span className="font-semibold text-[#D7AD76] tracking-widest uppercase">CAVENTRA</span>
+          </div>
+          <div className="flex items-center gap-4 flex-wrap justify-center">
+            <a
+              href="https://instagram.com/caventra"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-[#D7AD76] transition-colors"
+              title="Caventra on Instagram"
+            >
+              <Instagram className="w-3.5 h-3.5 text-[#C39C69]" />
+              <span>@caventra</span>
+            </a>
+            <span className="text-[#C39C69]/30">•</span>
+            <a
+              href="mailto:contact@caventra.com"
+              className="inline-flex items-center gap-1.5 hover:text-[#D7AD76] transition-colors"
+              title="Email Caventra"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#C39C69]" />
+              <span>contact@caventra.com</span>
+            </a>
           </div>
         </div>
       </div>
