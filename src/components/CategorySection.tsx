@@ -46,7 +46,7 @@ export const CategorySection: React.FC = () => {
                 
                 {/* Piece Counter Badge */}
                 <span className="absolute bottom-3 left-3 px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-white/90 text-[#061507] shadow-sm">
-                  {col.count} Pieces
+                  Heirloom Brass
                 </span>
               </div>
 

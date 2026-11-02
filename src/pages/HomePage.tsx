@@ -49,55 +49,81 @@ export const HomePage: React.FC = () => {
               to="/shop"
               className="text-xs uppercase tracking-widest text-[#061507] hover:text-[#C39C69] font-semibold flex items-center gap-1.5 border-b border-[#061507]/30 pb-0.5 transition-colors"
             >
-              <span>View All 12 Pieces</span>
+              <span>Explore Atelier Catalogue</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
-          {/* Product Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {bestsellers.map((product, idx) => (
-              <ProductCard key={product.id} product={product} index={idx} />
-            ))}
-          </div>
+          {/* Product Grid / Tasteful Empty State */}
+          {bestsellers.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              {bestsellers.map((product, idx) => (
+                <ProductCard key={product.id} product={product} index={idx} />
+              ))}
+            </div>
+          ) : (
+            <div className="py-14 px-6 text-center space-y-4 max-w-xl mx-auto rounded-3xl bg-[#F9F7F2] border border-[#061507]/[0.08] shadow-card-soft">
+              <Sparkles className="w-8 h-8 text-[#C39C69] mx-auto" />
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#061507]">
+                Atelier Catalogue in Preparation
+              </h3>
+              <p className="text-xs sm:text-sm text-[#637066] font-light leading-relaxed max-w-md mx-auto">
+                Our signature bridal chokers, temple jhumkas, and royal cuffs are currently being catalogued with verified pricing. For immediate availability, custom bridal inquiries, or bespoke orders, speak directly with our concierge.
+              </p>
+              <div className="pt-2">
+                <a
+                  href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
+                    'Hello Shakti Abhushan! I am interested in viewing your handcrafted brass jewellery collection.'
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary py-3 px-8 rounded-full text-xs font-semibold tracking-wider inline-flex items-center gap-2"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  <span>Inquire via WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* 4. LIVE-STYLE VIDEO / SHOP THE LOOK (Section 07 - Warm Ivory - MANDATORY) */}
+      {/* 4. LIVE-STYLE VIDEO / SHOP THE LOOK (Section 07 - Warm Ivory - Rendered when verified reels present) */}
       <ShoppableReelsSection />
 
       {/* 5. FULL-WIDTH EDITORIAL SHOWCASE (Section 08 - Pure White) */}
       <EditorialShowcaseSection />
 
-      {/* 6. NEW ARRIVALS (Section 09 - Warm Ivory) */}
-      <section className="py-20 sm:py-24 bg-[#F9F7F2] border-b border-[#061507]/[0.06]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-12 sm:mb-16">
-            <div className="space-y-2">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-medium block">
-                Latest Additions • नवीन आभूषण
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#061507]">
-                Freshly Curated for You
-              </h2>
+      {/* 6. NEW ARRIVALS (Rendered when verified products are available) */}
+      {newArrivals.length > 0 && (
+        <section className="py-20 sm:py-24 bg-[#F9F7F2] border-b border-[#061507]/[0.06]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-12 sm:mb-16">
+              <div className="space-y-2">
+                <span className="text-xs uppercase tracking-[0.25em] text-[#C39C69] font-medium block">
+                  Latest Additions • नवीन आभूषण
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#061507]">
+                  Freshly Curated for You
+                </h2>
+              </div>
+              <Link
+                to="/shop"
+                className="text-xs uppercase tracking-widest text-[#061507] hover:text-[#C39C69] font-semibold flex items-center gap-1.5 border-b border-[#061507]/30 pb-0.5 transition-colors"
+              >
+                <span>Explore New Designs</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
-            <Link
-              to="/shop"
-              className="text-xs uppercase tracking-widest text-[#061507] hover:text-[#C39C69] font-semibold flex items-center gap-1.5 border-b border-[#061507]/30 pb-0.5 transition-colors"
-            >
-              <span>Explore New Designs</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {newArrivals.map((product, idx) => (
-              <ProductCard key={product.id} product={product} index={idx} />
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              {newArrivals.map((product, idx) => (
+                <ProductCard key={product.id} product={product} index={idx} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* 7. OUR STORY (Section 10 - Pure White) */}
       <section className="py-20 sm:py-24 bg-white border-b border-[#061507]/[0.06]">

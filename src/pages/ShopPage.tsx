@@ -396,20 +396,27 @@ export const ShopPage: React.FC = () => {
 
             {/* Product Card Grid */}
             {filteredProducts.length === 0 ? (
-              <div className="py-24 text-center space-y-4 bg-white rounded-3xl border border-[#061507]/[0.08] shadow-card-soft">
+              <div className="py-20 px-6 text-center space-y-4 bg-white rounded-3xl border border-[#061507]/[0.08] shadow-card-soft">
                 <Sparkles className="w-8 h-8 text-[#C39C69] mx-auto" />
                 <h3 className="font-serif text-2xl text-[#061507]">
-                  No pieces matched your selection
+                  Atelier Catalogue in Preparation
                 </h3>
-                <p className="text-xs text-[#637066] max-w-sm mx-auto">
-                  Try adjusting your search criteria, price range, or category filter to discover our brass ornaments.
+                <p className="text-xs text-[#637066] max-w-md mx-auto leading-relaxed">
+                  Our handcrafted brass jewellery catalogue is currently being updated with verified client pieces and certified specifications. Connect directly with our WhatsApp concierge for live piece viewings and bespoke orders.
                 </p>
-                <button
-                  onClick={resetAllFilters}
-                  className="px-6 py-2.5 rounded-full bg-[#061507] text-[#D7AD76] hover:bg-[#0A1B0D] text-xs uppercase tracking-widest font-semibold transition-all shadow-sm"
-                >
-                  Reset All Filters
-                </button>
+                <div className="pt-2">
+                  <a
+                    href={`https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(
+                      'Hello Shakti Abhushan! I am inquiring about available pieces in your brass jewellery collection.'
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs uppercase tracking-widest font-semibold"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
+                    <span>Inquire on WhatsApp</span>
+                  </a>
+                </div>
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-7">
