@@ -48,7 +48,7 @@ const RAW_COLLECTIONS: CollectionMeta[] = [
     hindiTitle: 'राजसी विवाह संग्रह',
     subtitle: 'Full bridal and ceremonial ensembles',
     description: 'Matching chokers, jhumkas, and maang tikkas finished in uniform antique gold patina for weddings and celebrations.',
-    image: '/products/necklace-royal.jpg',
+    image: '/products/necklace-hasli.jpg',
     count: 0
   }
 ];

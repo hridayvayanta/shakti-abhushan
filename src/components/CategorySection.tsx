@@ -43,11 +43,6 @@ export const CategorySection: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Piece Counter Badge */}
-                <span className="absolute bottom-3 left-3 px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-white/90 text-[#061507] shadow-sm">
-                  Heirloom Brass
-                </span>
               </div>
 
               {/* Title & Navigation Indicator */}
