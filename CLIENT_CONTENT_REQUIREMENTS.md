@@ -9,7 +9,7 @@ This document establishes the official content audit for the Shakti Abhushan eco
 | Content Category | Current Status | Notes |
 | :--- | :--- | :--- |
 | **Official Brand Logo** | ✅ **PRESERVED** | Original uploaded Shakti Abhushan royal crest with Devanagari calligraphy (`shakti-abhushan-logo.png`). |
-| **Homepage Hero Video** | ✅ **PRESERVED** | Continuous autoplay hero video (`shakti-abhushan-hero.mp4`) positioned immediately below header. Awaiting formal client copyright confirmation. |
+| **Homepage Hero Video** | ✅ **OFFICIAL CLIENT VIDEO INSTALLED** | Continuous autoplay hero video (`shakti-abhushan-hero.mp4`) updated with client-provided master footage (`1793643503712166.mp4`). |
 | **Cinematic Loading Animation** | ✅ **PRESERVED** | GSAP shared-element transition (center screen $\to$ permanent header). |
 | **Website Design & Theme** | ✅ **PRESERVED** | Forest Green (`#061507`), Antique Gold (`#C39C69`), Warm Ivory (`#F9F7F2`), Pure White (`#FFFFFF`). |
 | **Ecommerce Infrastructure** | ✅ **FUNCTIONAL** | Shopping bag drawer, state management, WhatsApp checkout formatting. |
@@ -23,12 +23,10 @@ This document establishes the official content audit for the Shakti Abhushan eco
 ## 2. Preserved Assets (Mandatory & Operational)
 
 ### 2.1 Starting Homepage Hero Video
-- **Status**: **PRESERVED** (`/public/videos/shakti-abhushan-hero.mp4`)
+- **Status**: ✅ **OFFICIAL CLIENT VIDEO INSTALLED** (`/public/videos/shakti-abhushan-hero.mp4`)
+- **Source**: Master 4K video (`1793643503712166.mp4`) transcoded to web-optimized 1080p fast-start with matched emerald velvet jewellery poster (`hero-poster.jpg`).
 - **Location**: Top of homepage immediately under header navigation.
 - **Functionality**: Autoplay, looped, muted, responsive across desktop and mobile.
-- **Action Required for Client**:
-  - [ ] Confirm legal ownership or licensing of the footage.
-  - [ ] If replacement is desired in future, provide high-resolution MP4 (1080p, H.264/AAC, optimized under 15MB).
 
 ### 2.2 Official Brand Logo & Identity
 - **Status**: **PRESERVED** (`/public/brand/shakti-abhushan-logo.png`)
